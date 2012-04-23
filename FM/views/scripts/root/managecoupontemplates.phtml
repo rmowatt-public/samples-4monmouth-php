@@ -1,0 +1,28 @@
+<div class="couponLists">	
+	<h3>Manage Coupons Templates</h3>
+	<div id="coupons">		
+		<h4>Coupons</h4>
+		<div class="lists">
+			<table class="listing" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<th>Id</th>
+					<th class="name">Name</th>
+					<th>Image Name</th>
+					<th>Active</th>
+					<th>Delete</th>
+				</tr>
+			<?php foreach ($this->templates as $template) { ?>
+			
+				<tr id="tr_<?php echo $template->getId() ?>">
+					<td class="id"><?php echo $template->getId() ?> </td>
+					<td class="name"><a class="preview_coupon" href="/media/image/coupon_templates/<?php echo $template->getImage() ?>" target="_blank"><?php echo $template->getName() ?></a></td>
+					<td class="image"><?php echo $template->getImage() ?> </td>
+					<td class="active"><input type="checkbox" id="templateactive_<?php echo $template->getId() ?>" <?php echo ($template->isActive()) ? ' CHECKED ' : ''; ?> onclick="FM.CouponRoot.toggleTemplateActive(<?php echo $template->getId() ?>)" /></td>
+					<td class="delete"><div onclick="FM.CouponRoot.deleteCouponTemplate(<?php echo $template->getId() ?>)"><img src="/images/icons/remove.png" alt="add" height="16" width="16"></div></td>
+				</tr>
+				<? } ?>
+				</tbody>
+			</table>
+			</div>
+	</div>
+</div>

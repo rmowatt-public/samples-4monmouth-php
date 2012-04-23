@@ -1,0 +1,24 @@
+<div id="users" class='mod'>
+<b>This form is supplemental and for use with non member organizations only<br />
+To enable a member org for Limecard use the Organization control panel
+</b>
+</div>
+<? echo $this->form; ?>
+<div id="limecard">
+<table width="100%">
+<tr><th>name</th><th>address</th><th>city, state</th><th>phone</th><th>website</th><th>Delete</th><th>Edit</th></tr>
+<?php
+//print_r($this->current);exit;
+foreach ($this->current  as $keys=>$values) { ?>
+	<tr><td><?=$values['record']['name']?></td><td><?=$values['record']['address']?></td><td><?=$values['record']['city']?>, <?=$values['record']['state']?></td>
+	<td><?=$values['record']['phone']?></td><td><?=$values['record']['website']?></td>
+	<td class="delete"><a href="/root/limecard/delete/<?=$values['record']['id']?>">X</a></td>
+	<td class="delete"><a href="/root/limecard/edit/<?=$values['record']['id']?>">E</a></td>
+	</tr>
+	<? if($values['record']['limits'] != '') { ?>
+	<tr><td colspan = "7" class="keywords"><span>Keywords: </span><?=$values['record']['limits']?></td></tr>
+	<? } ?>
+<? }
+?>
+</table>
+</div>

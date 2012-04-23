@@ -1,0 +1,100 @@
+<?php //print_r($this->sorted); exit;?>
+<div id="managecats">
+	<h3>Categories</h3>
+	<form method="POST">
+		<div class="mod">
+			<h4>Add a New Category</h4>
+			<div><label>Category Name: </label><input type="text" name = "name" id="catName" /></div>
+			<div>
+				<label>Subcategory Of: </label>
+				<select name="parent">
+					<option value="0">None</option>
+					<?php foreach ($this->roots as $key=>$cat) { ?>
+			  		<option value="<?php echo $cat->getId(); ?>"><?php echo $cat->getName(); ?></option>
+			  		<?php } ?>
+				</select>
+			</div>
+			<div class="sub"><input type="submit" class="subbtn"  value="add category"  /></div>
+		</div>
+	</form>
+	<form method="POST">
+		<div class="mod">
+			<h4>Delete a Category</h4>
+			<div>
+				<label>Choose Category: </label>		
+				<select name="deleteCat">
+					<option value="0">None</option>
+					<?php foreach ($this->roots as $key=>$cat) { ?>
+			  		<option value="<?php echo $cat->getId(); ?>"><?php echo $cat->getName(); ?></option>
+			  		<?php } ?>
+				</select>
+			</div>
+			<div class="sub"><input type="hidden" name="delete" value = "1" /><input type="submit" class="subbtn"  value="delete category"/></div>			
+		</div>
+	</form>
+		<form method="POST">
+		<div  class="mod">
+			<h4>Edit a Category</h4>
+			<div>
+				<label>Choose Category: </label>
+				<select name="editCat">
+					<option value="0">None</option>
+					<?php foreach ($this->roots as $key=>$cat) { ?>
+			  		<option value="<?php echo $cat->getId(); ?>"><?php echo $cat->getName(); ?></option>
+			  		<?php } ?>
+				</select>
+			</div>
+			<div><label>New Name : </label><input type="text" name="name" /></div>
+			<div class="sub"><input type="hidden" name="edit" value = "1" /><input type="submit" class="subbtn"  value="edit category"/></div>
+		</div>
+	</form>
+	<h3>SubCategories</h3>
+	<form method="POST">
+		<div class="mod">
+			<h4>Delete a SubCategory</h4>
+			<div>
+				<label>Choose Category: </label>
+				<select name="deleteCat">
+					<option value="0">None</option>
+					<?php foreach ($this->sorted as $key=>$cat) { 
+							$parent = $cat['main']; 
+							if(!is_object($parent)){continue;}?>
+						<optgroup title="<?php echo $parent->getName(); ?>" label="<?php echo $parent->getName(); ?>" visible="true">
+							<?php if(array_key_exists('subs', $cat)) {
+								foreach ($cat['subs'] as $index=>$sub) { ?>
+					  		<option value="<?php echo $sub->getId(); ?>"><?php echo $sub->getName(); ?></option>
+					  		<?php }
+							} ?>
+				  		</optgroup>
+					<?php } ?>
+				</select>
+			</div>
+			<div class="sub"><input type="hidden" name="delete" value = "1" /><input type="submit" class="subbtn" value="delete category" /></div>
+		</div>
+	</form>
+		<form method="POST">
+		<div class="mod">
+			<h4>Edit a SubCategory</h4>
+			<div>
+				<label>Choose Category: </label>
+				<select name="editCat">
+					<option value="0">None</option>
+						<?php foreach ($this->sorted as $key=>$cat) { 
+								$parent = $cat['main']; 
+								if(!is_object($parent)){continue;}?>
+							<optgroup title="<?php echo $parent->getName(); ?>" label="<?php echo $parent->getName(); ?>" visible="true">
+								<?php if(array_key_exists('subs', $cat)) {
+									foreach ($cat['subs'] as $index=>$sub) { ?>
+						  		<option value="<?php echo $sub->getId(); ?>"><?php echo $sub->getName(); ?></option>
+						  		<?php }
+								} ?>
+					  		</optgroup>
+						<?php } ?>
+					</select>
+				</div>
+			<div><label>New Name : </label><input type="text" name="name" /></div>
+			<div class="sub"><input type="hidden" name="edit" value = "1" /><input type="submit" class="subbtn"  value="edit category"/></div>		
+		</div>
+	</form>
+	
+</div>

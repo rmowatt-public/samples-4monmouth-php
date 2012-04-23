@@ -1,0 +1,12 @@
+<div class="toggle">
+    Send an Email to Users<a onclick='FM.Account.showhelp(this, "EMAILTOMEM", event)'><img src="/images/icons/question_icon.gif" height="15" width="15" /></a>
+</div>
+<div id="profileAdmin" class="module">
+	<div style="margin:10px;padding-left:0px;"><label>Subject : </label>&nbsp;<input type="text" id="suemailsubject" value="" style="width: 500px" /></div>
+	<textarea class="mceEditor" id="semail"></textarea>
+	<div>
+        <input type="submit" class="submit" onclick="FM.Account.email(tinyMCE.get('semail').getContent(), $('suemailsubject').value)" value = "send" />
+    </div>
+    <div>
+    </div>	
+</div>

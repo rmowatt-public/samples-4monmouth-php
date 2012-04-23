@@ -1,0 +1,56 @@
+<h3>Manage Client Banners</h3>
+<div id="couponjumpboxWrap">
+	Show New Banners From : <FORM>
+		<SELECT id="bannerjumpbox" onChange="location.href = $('bannerjumpbox').options[$('bannerjumpbox').selectedIndex].value">
+			<OPTION VALUE="/root/managebanners/">All
+			<?php
+				foreach ($this->orglist as $org) { ?>
+					<OPTION VALUE="/root/managebanners/<?php echo $org->getId(); ?>" <?php if($this->selected == $org->getId())  {echo ' SELECTED ';} ?>><?php echo $org->getName(); ?>
+			<?php	} ?>
+		</SELECT>
+	</FORM>
+</div>
+<div class="table">
+				<img src="img/bg-th-left.gif" alt="" class="left" height="7" width="8">
+				<img src="img/bg-th-right.gif" alt="" class="right" height="7" width="7">
+				<table class="listing" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<th class="first" width="140">Sponsor</th>
+						<th>Id</th>
+						<th>OrgId</th>
+						<th>Type</th>
+						<th>Code</th>
+						<th>Upload</th>
+						<th>View</th>
+						<th>Complete</th>
+						<th>Delete</th>
+					</tr>
+				<?php foreach ($this->banners as $banner) { ?>
+				
+					<tr id="tr_<?php echo $banner->getId() ?>">
+						<td class="first style1">- <?php echo $banner->getName() ?> </td>
+						<td><?php echo $banner->getId() ?> </td>
+						<td><?php echo $banner->getOrgId() ?> </td>
+						<td><?php echo $banner->getType() ?> </td>
+						<td><?php echo $banner->getCode() ?> </td>
+						<td><div id="upload_<?php echo $banner->getId() ?>" onclick="FM.BannerRoot.upload(this)"><img src="/images/root/img/save-icon.gif" alt="" height="16" width="16"></div></td>
+						<?php if($banner->getFile() ) { ?>
+						<td id="view_<?php echo $banner->getId() ?>"><div  onclick = "FM.BannerRoot.viewBanner('<?php echo $banner->getFile() ?>')"><img src="/images/root/img/Camera.gif" alt="" height="16" width="16"></div></td>
+						<? } else { ?>
+						<td  <div id="view_<?php echo $banner->getId() ?>">X</td>
+						<?php } ?>
+						<td><div id="complete_<?php echo $banner->getId() ?>" onclick="FM.BannerRoot.markComplete(this)"><img src="/images/root/img/add-icon.gif" alt="save" height="16" width="16"></div></td>
+						<td class="last"><div onclick="FM.BannerRoot.deleteBanner(<?php echo $banner->getId() ?>)"><img src="/images/root/img/hr.gif" alt="add" height="16" width="16"></div></td>
+					</tr>
+					<tr class="bg">
+						<td class="first style2">- Offer </td>
+						<td colspan="8" style="text-align:left;"><?php echo $banner->getOffer() ?></td>
+					</tr>
+						<tr class="bg">
+						<td class="first style2">- Copy </td>
+						<td colspan="8" style="text-align:left;"><?php echo $banner->getCopy() ?></td>
+					</tr>
+				
+				<? } ?>
+</tbody></table>
+</div>

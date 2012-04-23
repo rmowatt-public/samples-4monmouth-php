@@ -1,0 +1,7 @@
+<div class="tab_content" id="<?php echo $this->id ?>">
+	<h6>Directions</h6>
+	<?php echo $this->profile ?>
+</div>
+<script>
+	FM.onDomReady(function(e){new Ajax.Request('http://maps.google.com/maps/geo?q=1600+Amphitheatre+Parkway,+Mountain+View,+CA&output=csv&oe=utf8&sensor=false&key=ABQIAAAA_WGDCvMpFU8O1GHlzA6-1BTbRFMVmjYnCKIVPbMt4hvDQV5oyhRKgpX23mRaH6VhVc3Fn0qIfTx1hg', {onSuccess : function(transport){alert(transport.responseText)}})});
+</script>

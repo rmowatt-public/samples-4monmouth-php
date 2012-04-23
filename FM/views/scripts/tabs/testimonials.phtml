@@ -1,0 +1,22 @@
+<div class="tab_content" id="<?php echo $this->id ?>">
+<h6>reviews</h6>
+	<h3>Submit a review</h3>
+<?php
+	echo $this->form;
+?>
+<hr />
+<div id = "reviewsScroll" >
+<?php
+	foreach ($this->testimonials as $index=>$obj) {
+		if($obj->isActive()) {
+?>
+	<div class="testimonialWrap">
+		<div class="testimonialCopy">&quot;<?php echo $obj->getTestimonial(); ?>&quot;</div>
+		<div class="from">Courtesy Of : <?php echo $obj->getName(); ?></div>
+		
+	</div>
+<?php
+		}}
+?>	
+</div>
+</div>

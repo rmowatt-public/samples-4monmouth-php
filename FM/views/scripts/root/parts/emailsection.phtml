@@ -1,0 +1,24 @@
+<div class="emailSectionWrapper">
+<h2><?php echo $this->title; ?></h2>
+<?php
+	foreach($this->emails as $index=>$email) {
+		if($email->getEmail()){
+?>
+	<div class="meta" onclick = "Effect.toggle('message_<?php echo $index; ?>', 'appear', {  });" >
+		<div class="from">From : <?php echo $email->getEmail(); ?></div>
+		<div class="timestamp">Recieved : <?php echo $email->getTimestamp(); ?></div>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div id="message_<?php echo $index; ?>" style="display:none;clear:both;" >
+		<div class="message">
+			<div ><?php echo $email->getMessage(); ?></div>
+			<div>reply</div>
+			<div class="clear">&nbsp;</div>
+		</div>
+	</div>
+
+<?php
+	}
+	}
+?>
+</div>

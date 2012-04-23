@@ -1,0 +1,89 @@
+/**
+ * @author		Filipe Araujo
+ * @version		2.0
+ * @since		1.0
+ *
+ *
+ * @lastChange	
+ *
+ */
+
+
+/**
+ * Lite Styles
+ */
+/**
+ * @section         Globals
+ */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img {
+    border: 0;
+}
+ol, ul {
+    list-style: none;
+}
+a {
+    cursor : pointer;
+	color:#FF6F00;
+	text-decoration: none
+}
+a:hover {
+	text-decoration: underline
+}
+body {
+	margin:auto;
+	padding:0;
+  	color:#000;
+	font-family:tahoma,arial,sans-serif;
+	font-size:11px;
+}
+	
+	
+/**
+ * @section				addUserForm
+ */
+
+#newUser {
+		width : 300px;
+}
+	#newUser h3{
+		color : #5A9ABE;
+		font-size : 18px;
+		margin : 10px 10px 25px 0;
+	}
+	#newUser div.client{
+		margin-bottom : 10px;
+	}
+		#newUser form {
+			color : #666;
+		}
+			#newUser form dt {
+				float : left;
+				margin-right : 6px;
+				padding-top : 10px;
+				text-align : right;
+				width : 100px;
+			}
+			#newUser form dd {
+				padding : 6px;
+			}
+				#newUser form dd input,
+				#newUser form dd select {
+					border : 1px solid #ccc;
+					color : #444;
+				}
+				#newUser form #submit-element input {
+					border : 0;
+					color : #5A9ABE;
+					float : right;
+					font-size : 18px;
+					font-weight : bold;
+					margin-top : 13px;
+				}

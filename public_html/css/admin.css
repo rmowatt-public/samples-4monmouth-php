@@ -1,0 +1,32 @@
+
+
+
+div#bw{
+}
+div#bannerForm{
+	width:400px;
+	float:left;
+}
+
+div#bannerDisplay {
+	width:500px;
+	float:left;
+}
+
+div.bannerWrap {
+	clear:both;
+	width:500px;
+	border:1px solid black;
+	margin:.2em;
+	padding:0 1em 0 1em;
+}
+
+div.bannerWrap img{
+	float:left;
+}
+
+div.bannerWrap .bannerInfo{
+	margin:1em;
+	width:300px;
+	float:left;
+}

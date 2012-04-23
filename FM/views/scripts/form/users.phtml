@@ -1,0 +1,10 @@
+<dt id="admin-label"><label for="admin" class="required">Administrator :</label></dt>
+<dd id="admin-element">
+    <SELECT id="userSelect" name="admin">
+    	<?php foreach ($this->element->getMultiOptions() as $key=>$value) { ?>
+    		<option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+    	<? } ?>
+    </SELECT>
+    <span>or <a class="create_member" href="/root/quickadduser">Create New Member</a></span>
+ </dd>
+ <?php if($this->element->getMessages()){ echo $this->formErrors($this->element->getMessages()); } ?>

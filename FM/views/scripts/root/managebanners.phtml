@@ -1,0 +1,55 @@
+<div class="bannerLists">
+<?php print $this->search; ?>
+	<div class="coupon_nav">
+		<FORM>
+			<SELECT id="couponjumpbox" onChange="location.href = $('couponjumpbox').options[$('couponjumpbox').selectedIndex].value">
+				<OPTION VALUE="/root/managecoupons/">All
+				<?php
+					foreach ($this->orglist as $org) { ?>
+						<OPTION VALUE="/root/managebanners/<?php echo $org['id']; ?>" <?php if($this->selected == $org['id'])  {echo ' SELECTED ';} ?>><?php echo $org['name']; ?>
+				<?php	} ?>
+			</SELECT>
+		</FORM>
+	</div>
+	<h3>Manage Client Banners</h3>
+	<div id="banners">
+		<h4>Banners</h4>
+		<div class="lists">
+				<table class="listing" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<th>Sponsor</th>
+						<th></th>
+						<th>Id</th>
+						<th>OrgId</th>
+						<th>Type</th>
+						<th>Width</th>
+						<th>Height</th>
+						<th>Active</th>
+						<th>Delete</th>
+					</tr>
+				<?php foreach ($this->banners as $banner) { ?>
+				
+					<tr id="tr_<?php echo $banner['id'] ?>">
+						<td class="sponsor" colspan="2"><a class="preview_banner" href="/bannerpreview/<?php echo $banner['id'] ?>"><?php echo $banner['name'] ?></a></td>
+						<td class="id"><?php echo $banner['id'] ?> </td>
+						<td class="orgid"><?php echo $banner['oid'] ?> </td>
+						<td class="type"><?php echo $banner['type'] ?> </td>
+						<td class="width"><?php echo $banner['width'] ?> </td>
+						<td class="height"><?php echo $banner['height'] ?> </td>
+						<td class="active"><input id="active_<?php echo $banner['id'] ?>" type="checkbox" onclick="FM.BannerRoot.toggleActive(<?php echo $banner['id'] ?>)" <?php echo ($banner['active'] == 1)? 'CHECKED' : ''; ?>/></td>
+						<td class="delete"><div onclick="FM.BannerRoot.deleteBanner(<?php echo $banner['id'] ?>)"><img src="/images/icons/remove.png" alt="add" height="16" width="16"></div></td>
+					</tr>
+					<tr class="odd">
+						<td class="offer">Headline : </td>
+						<td class="offerdetail" colspan="8"><?php echo $banner['headline'] ?></td>
+					</tr>
+					<tr class="odd">
+						<td class="copy">Copy : </td>
+						<td class="copydetail"colspan="8" ><?php echo $banner['copy'] ?></td>
+					</tr>				
+				<? } ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

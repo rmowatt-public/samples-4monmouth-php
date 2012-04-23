@@ -1,0 +1,34 @@
+<div class="toggle">
+        Org Members<a onclick='FM.Account.showhelp(this, "ORGMEM", event)'><img src="/images/icons/question_icon.gif" height="15" width="15" /></a>
+</div>
+<div id="sportsuserAdmin" class="module">
+ 	<div class="addSportsUserWrapper">
+ 		<h4>Add a member of your Sports Organization</h4>
+ 		<form id="addSportsUser">
+ 		<div><label>Full Name : </label><input type="text" name="addfullname" id="addfullname" /></div>
+ 		<div><label>Email : </label><input type="text" name="adduseruname" id="adduseremail" /></div>
+		<div><label>User Name : </label><input type="text" name="adduseruname" id="adduseruname" /></div>
+		<div><input type="submit" class="sub" value="Add" onclick="FM.Account.addSportsUser($('adduseremail').value, $('adduseruname').value, $('addfullname').value);return false;" /></div>
+		</form>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div class="clear">&nbsp;</div>
+	<div class="addSportsUserWrapper">
+		<table id="sportsusertable">
+			<tr>
+				<th width="35%">username</th>
+				<th width="35%">email</th>
+				<th width="10%">delete</th>
+				<th width="20%">Send Password</th>
+			</tr>
+			<?php foreach($this->users as $index=>$user){ ?>
+				<tr id="sutr_<?php echo $user->getId(); ?>">
+					<td><?php echo $user->getUserName(); ?> (<?php echo $user->getFullName(); ?>)</td>
+					<td><?php echo $user->getEmail(); ?></td>
+					<td align="center"><a onclick="FM.Account.deleteSportsUser(<?php echo $user->getId(); ?>, '<?php echo $user->getUserName(); ?>')"><img src="/images/icons/remove.png" /></a></td>
+					<td align="center"><a onclick="FM.Account.sendSportsUserPassword(<?php echo $user->getId(); ?>)"><img src="/images/icons/send.jpg" /></a></td>
+				</tr>
+			<?php } ?>
+		</table>
+	</div>
+</div>

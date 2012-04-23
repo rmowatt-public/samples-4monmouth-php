@@ -1,0 +1,45 @@
+<div id="events_wr2" style="display:<?php echo $this->display; ?>">
+<div class="toggle">Manage Events</div>
+<div id="manageBanners" class="module">
+	<div>
+		<table width="100%" id="manageeventstable" cellpadding="0" cellspacing="0" border="1">
+			<tr id="manageeventsheaders">
+				<th align="left">name</th>
+				<th align="left">date</th>
+				<th align="left" style="width:110px;">time</th>
+				<th align="left">location</th>
+				
+				<th>edit</th>
+				<th>delete</th>
+			</tr>
+			<?php            
+                $count = 0;
+                if(is_array($this->events)){
+				foreach ($this->events as $event) { 
+					//foreach ($eventday->getEvents() as $event) { 
+                    $count++; 
+                    ?>
+					<tr id="manageevents_<?php echo $event['eventId']  ?>" class="<?php if($count%2) { echo 'odd'; }?>">
+						<td><?php echo $event['name'] ?></td>
+						<td><?php echo date('m-d-Y',strtotime($event['datetag'])) ?></td>
+						<td ><?php echo $event['time'] ?></td>
+						<td><?php echo $event['location'] ?></td>
+                        
+                          <td align="center">
+                            <a onclick = "FM.Events.edit(<?php echo $event['eventId'] ?>)"  title="<?php $event['name'] ?>">
+                                <img src="/images/icons/edit.png" />
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a onclick="FM.Events.remove('<?php echo $event['eventId']  ?>')" class="delete_event_<?php echo $event['eventId']  ?>">
+                                <img src="/images/icons/remove.png" />
+                            </a>
+                        </td>
+					</tr>
+					<tr id="manageeventsdesc_<?php echo $event['eventId']  ?>" class="<?php if($count%2) { echo 'odd'; }?>"><td colspan="6" style="padding-bottom:1em" ><b><i>Description : </i></b> <?php echo $event['description'] ?></td></tr>
+			<?php } }?>
+		</table>
+  
+	</div>
+</div>
+</div>

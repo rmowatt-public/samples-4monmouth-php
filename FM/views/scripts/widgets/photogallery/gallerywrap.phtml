@@ -1,0 +1,199 @@
+<?php //echo $this->album_array; ?>
+<style>
+div#photogallery_carousel_wrapper div.albumhead {
+	background:#73BE1E;
+	color:white;
+	font-size:10pt;
+	padding:3px;
+	margin-top:.5em;
+}
+</style>
+<script >
+FM.Media = {}
+
+
+FM.Media.PhotoGallery = (function(){
+	var
+	
+	json = '<?php echo $this->album_array; ?>',
+	
+	bindEvents = function(){
+
+		jQuery("#tab_media").unbind("click", init);
+
+		jQuery(".jcarousel-item a").colorbox({
+			opacity : .4
+		});
+
+		jQuery(".delete_media").click(remove);
+
+		return false;
+	},
+
+	init = function(){
+		var mjson = json.evalJSON();
+		FM.Media.Images  = FM.Media.Images || mjson;
+		
+		$H(FM.Media.Images).each(function(el){
+			jQuery(".photogallery_carousel_" + el.key).jcarousel({
+				size:   el.value.length,
+				itemLoadCallback : {
+					onBeforeAnimation : function(carousel, state){
+						itemLoadCallback(carousel, state, el.value);
+					}
+				}
+			});
+		}
+		);
+	},
+	itemLoadCallback = function(carousel, state, imgs){
+		for (var i = carousel.first; i <= carousel.last; i++) {
+			if (carousel.has(i)) { continue; }
+			if (i > imgs.length) { break }
+			carousel.add(i, itemSchema(imgs[i-1]));
+		}
+
+		bindEvents();
+	},
+	itemSchema = function(item){
+		return '<a title="'+item.imageTitle+'" href="/displayphotos/' + $('orgId').value + '/' +  item.id +'" id="pg_' + item.id +'"><img src="/media/image/photogallery/' + item.imageName + '" width="60" height="60" alt="' + item.imageName + '" style="display: block !important;" /></a><?php if($this->admin){ ?><div style="text-align:center" class="delete_media" ><img class="r_' +  item.id + ' " src = "/images/icons/remove.png" /></div><?php } ?>';
+	},
+	reset = function(id){
+		$H(FM.Media.Images).each(function(el){
+			jQuery(".photogallery_carousel_" + el.key ).html('');
+			if(id) {
+				$H(el.value).each(function(el2){
+					if(el2.value.id == id) {
+						el2.remove();
+					}
+				}
+				)
+			}
+		});
+	},
+
+	remove = function(el) {
+		id = el.target.className.split('_')
+		imageId = id[1].strip()
+		pars = {
+			id : imageId,
+			orgId : $('orgId').value
+		}
+		FM.doAjax('/utilities/ajaxremovemedia', $H(pars).toQueryString(), function(transport){
+			if(transport.responseText != '0') {
+				FM.ajaxStatus('Image has been removed.', 'confirmation');
+				FM.PhotoGallery.reset(transport.responseText.evalJSON());
+			} else {
+				alert('Action failed, please refresh and try again')
+			}
+		});
+	};
+
+	jQuery(function(){
+		jQuery("#tab_media").click(init);
+	});
+	
+	
+
+	return {
+		init : init,
+		reset : reset,
+		remove : remove
+	}
+
+})();
+</script>
+ <div id="photogallery">
+    <div id="photogallery_upload">
+    	<div id="photogallery_carousel_wrapper">
+    	<div style="max-height:418px;overflow-y:scroll;overflow-x:hidden;">
+    	<?php foreach($this->albums as $k=>$album){	
+    		//if($album->getName() != ''){
+    		//echo ($album->getName() != '') ? $album->getName() : 'Default';
+               		?>  
+               		<div id="photoalbum_<?php echo $album->getId() ?>" <?php echo ($album->getName() == '' && !$this->default) ? 'style="display:none"'  : ''; ?>>
+               			<div class="albumhead" ><?php echo ($album->getName() != '') ? $album->getName() : 'Pictures';?>&nbsp;<?php if($album->getDescription()){ ?>&nbsp;<img src="/images/icons/info-icon.png" onMouseOver="toolTip('<?php echo $album->getDescription(); ?>', 150)" onMouseOut="toolTip()" /><?php } ?><?php if($this->admin && $album->getName() != '') { ?><span style="float:right"><img src="/images/icons/remove.png" onclick="FM.PhotoGallery.removeAlbum('<?php echo $album->getId() ?>', '<?php echo ($album->getName() != '') ? $album->getName() : 'Default';?>')" /></span><?php } ?></div>
+               			<ul id="photogallery_carousel" class="photogallery_carousel_<?php echo $album->getId() ?>"></ul>
+               		</div>
+               		<?php  
+               //	}
+    	}?>
+               	
+    		</div>	
+
+ <?php if($this->admin) { ?>  
+ <div id="galleryadmin">
+ 	<div>
+ 		<input type ="checkbox" onclick="FM.PhotoGallery.toggleAlbumOn(this);" <? echo (!$this->default) ? ' checked ' : ''; ?>/>&nbsp;<label><strong>Show Albums Only</strong></label><br />
+       		<i>(When selected uncategorized images will not be shown in the default 'pictures' album)</i>
+       	</div>
+       <form class="zend_form">
+     
+ 	      <div style="clear:both;">
+ 	       
+               <label>Add an image to</label>
+               <select id="albumselect">
+               	<option value='0'>Pictures
+               	<?php foreach($this->albums as $k=>$album){
+               		if($album->getId() != '' && $album->getName() != '') {?>  
+               			<option value='<?php echo $album->getId(); ?>'><?php echo $album->getName(); ?></option>
+               		<?php } 
+               	}?>
+}
+               </select>
+           </div>
+           <div>
+               <label>description</label><textarea id="tagline" name="tagline"></textarea>
+           </div>           
+           <div class="photoimage">
+               <label>image</label>
+           </div>           
+            <input type="submit" class="submit" value="add media" onclick="FM.PhotoGallery.addPhoto();return false;" />
+           
+           <div id="productimage" class="upload_image">
+                <img src="/images/icons/upload.jpg" alt="60x60"/>
+            </div>
+            
+            <span class="upload_btn">click to upload<b></b></span>
+            
+            <div id="photoswf" class="upload_area">
+                <div id="swfUploadPhotoGallery"></div>
+            </div> 
+			
+				<input type="hidden" id="photoname" value='' />
+				<input type="hidden" id="photoheight"  value='' />
+				<input type="hidden" id="photowidth" value='' />
+            
+       </form>	
+       
+       <h2>Add an album</h2>
+        <form class="zend_form">
+        <div>
+               <label>name</label><input type="text" id="albumname" name="albumname" />
+           </div>  
+           <div>
+               <label>description</label><textarea id="albumdesc" name="albumdesc"></textarea>
+           </div>                  
+            <input type="submit" class="submit" value="add album" onclick="FM.PhotoGallery.addAlbum();return false;" />      
+       </form>	
+</div>
+
+<? }?>
+ 	</div>    
+</div>
+</div>
+<?php if($this->admin) { ?>  
+<style>
+	.crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-list li,
+            .crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-item {
+	height:90px;
+            }
+            
+     .crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-list li,
+         .crusade .col1 div#content #media #photogallery div#galleryadmin {
+		margin-top:.5em;
+		padding:.5em;
+		border:1px solid black;
+}
+</style>
+<?php } ?>

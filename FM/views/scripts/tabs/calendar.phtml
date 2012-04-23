@@ -1,0 +1,43 @@
+<div class="tab_content" id="calendar">
+<?php 
+	$nextMonth = date('m',  strtotime("first day of next month"));
+	$nextYear = date('Y',  strtotime("first day of next month"));
+	$prevMonth = date('m',  strtotime("first day of last month"));
+	$prevYear = date('Y',  strtotime("first day of last month"));
+	$nText = date('M, Y',  strtotime("first day of next month"));
+	$pText = date('M, Y',  strtotime("first day of last month"));
+	
+?>
+<div style="width:100%;">
+<div style="width:200px;float:left;">
+<a onclick="FM.Events.getNext(<?php echo $prevMonth ?>, <?php echo $prevYear ?>)"><img src="/images/icons/previous.png" />&nbsp;<?php echo $pText; ?></a>
+</div>
+<div style="width:200px;float:right;text-align:right;">
+<a  onclick="FM.Events.getNext(<?php echo $nextMonth ?>, <?php echo $nextYear ?>)"><?php echo $nText; ?>&nbsp;<img src="/images/icons/next.png" /></a>
+</div>
+</div>
+<!--
+	<h6>Upcoming Events!</h6>
+	
+	<?php foreach ($this->events as $datetag=>$day) { $date = date('l - F j, Y', strtotime($datetag)); ?>
+	
+		<h4><?= strtoupper($date) ?></h4>
+	
+		<?php foreach ($day->getEvents() as $event) { ?>
+	
+		<div class="calendar_event">
+			<strong><?= $event['name'] ?></strong><br />
+			<strong>Location: </strong><?= $event['location'] ?><br />
+			<strong>Description:</strong>
+			<?= $event['description'] ?>
+			<br /><br />
+		</div>
+		
+	<?php }?>
+
+	<hr />
+
+	<?php } ?>
+	-->
+<?php print $this->obj->__toString(); ?>	
+</div>

@@ -1,0 +1,34 @@
+<? Zend_Loader::loadClass('FM_Components_BaseComponent') ?>
+<div class="tab_content" id="products">
+	<h6>Product List</h6>
+	<?php //print_r($this->products);exit; ?>
+	<div style="max-height:800px;overflow-y:scroll;overflow-x:hidden;">
+	<?php foreach ($this->products as $index=>$product) { ?>
+	
+		<div class="product" id="product_<?php echo $product['id']; ?>">
+		<?php if($product['link'] != '') { ?>
+			<a href="<?php echo FM_Components_BaseComponent::cleanURL($product['link']); ?>" target="_blank">
+		<?php } ?>
+				<img src="/media/image/productimages/<?php echo $product['image']; ?>" height="60" width="60" />
+		<?php if($product['link'] != '') { ?>
+			</a>
+		<?php } ?>
+			<div>
+				<span>
+					<?php if($product['link'] != '') { ?>
+						<a href="<?php echo FM_Components_BaseComponent::cleanURL($product['link']); ?>" target="_blank">
+					<?php } ?>
+					<?php echo $product['name']; ?>
+					<?php if($product['link'] != '') { ?>
+						</a>
+					<?php } ?>
+				</span>
+				<?php echo $product['description']; ?>
+				<?php if($this->admin) { ?>  
+                <img src="/images/icons/remove.png" onclick = "FM.ProductList.deleteNode('<?php echo $product['id']; ?>')"/>
+                <?php } ?>
+			</div>
+		</div>	
+	<?php } ?>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="toggle">Manage EBM</div>
+<div id="manageBanners" class="module">
+	<div>
+		<table width="100%" id="manageadtable" cellpadding="0" cellspacing="0" border="1">
+			<tr id="manageadheaders">
+				<th align="left">content</th>
+				<!--<th>created</th>-->
+				<th>active</th>
+				<th>edit</th>
+				<th>delete</th>
+			</tr>
+			<?php            
+                $count = 0;
+				foreach ($this->ads as $ad) { 
+                    $count++; 
+                    ?>
+					<tr id="manageads_<?php echo $ad->getId() ?>" class="<?php if($count%2) { echo 'odd'; }?>">
+						<td><?php echo $ad->getContent() ?></td>
+						<!--<td align="center"><?php echo ($ad->isActive()) ? 'Y' : 'N'; ?></td>-->
+						<td align="center"><input type="checkbox" onclick = "FM.TextAd.toggleActive(this, <?php echo $ad->getId() ?>)" name="" <?php echo ($ad->isActive()) ? 'CHECKED' : '' ?>   /></td>
+						<td align="center">
+                            <a onclick="FM.TextAd.edit(<?php echo $ad->getId() ?>)" class="edit_ad_<?php echo $ad->getId() ?>">
+                                <img src="/images/icons/edit.png" />
+                            </a>
+                        </td>
+                        <td align="center">
+                            <a onclick="FM.TextAd.remove(<?php echo $ad->getId() ?>)" class="delete_ad_<?php echo $ad->getId() ?>">
+                                <img src="/images/icons/remove.png" />
+                            </a>
+                        </td>
+					</tr>
+			<?php } ?>
+		</table>
+	</div>
+</div>

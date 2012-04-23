@@ -1,0 +1,22 @@
+<?php
+echo $this->partial('header.phtml');
+echo $this->layout()->header;
+?>
+</div>
+<?php if($this->layout()->fullBanner) { ?>
+<div id="titleBanner">
+<?php if(stristr($this->layout()->fullBanner->getFile(), '.swf')){ ?>
+					<object width="952" height="120"><param name="movie" value="/media/image/fullbanners/<?php echo $this->layout()->fullBanner->getFile(); ?>"><param name="wmode" value="transparent"><embed src="/media/image/fullbanners/<?php echo $this->layout()->fullBanner->getFile(); ?>" width="952" height="120"></embed></object>
+			 <?php }else{ 
+			 	
+			 	
+    if($link = $this->layout()->fullBanner->getLink()){echo "<a href='{$link}'>";} ?>
+	   <img src="/media/image/fullbanners/<?php echo $this->layout()->fullBanner->getFile() ;?>" />
+    <?php if($link) { ?></a><?php } ?>
+
+<?php } } ?>
+</div>
+<div class="savior">
+		<?php echo $this->layout()->content; ?>
+</div>
+<?php echo $this->partial('footer.phtml');?>

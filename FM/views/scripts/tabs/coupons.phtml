@@ -1,0 +1,42 @@
+<div class="tab_content" id="<?php echo $this->id ?>">
+	<h6>Coupons</h6>
+	<div id="coupons" style="width:100%;">
+		<table id="couponlayout">
+		<?php  $i = 1;
+		foreach($this->coupons as $index=>$obj){
+			if($i == 1){print '<tr>';}
+			print '<td valign="top">';
+			?>
+			<div style="margin-bottom:.3em"><input type="checkbox" id="pc_<?php echo $obj->getId(); ?>">&nbsp; Select for printing</div>
+			<?php
+			switch($obj->getType()) {
+				case 1:
+					print $this->partial('tabs/couponoptions/coupon1.phtml', array(
+					'obj'=>$obj));
+					break;
+				case 2:
+					print $this->partial('tabs/couponoptions/coupon2.phtml', array(
+					'obj'=>$obj));
+					break;
+				case 3:
+					print $this->partial('tabs/couponoptions/coupon3.phtml', array(
+					'obj'=>$obj));
+					break;
+					break;
+				case 4:
+					print $this->partial('tabs/couponoptions/coupon4.phtml', array(
+					'obj'=>$obj));
+					break;
+					break;
+			}
+			print '</td>';
+			if($i==2){print '</tr>';$i--;}else {$i++;}
+		}
+		if($i==2){print '<td>&nbsp;</td></tr>';$i--;}else {$i++;}
+		?>
+	</table>
+	</div>
+	<div style="text-align:right"><input type="submit" value="Print Coupons" onclick="FM.CouponWidget.createPrint();return false;" ></div>
+	<div class="clear">&nbsp;</div>
+</div>
+

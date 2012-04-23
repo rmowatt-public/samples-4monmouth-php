@@ -1,0 +1,30 @@
+<div id="topbanners_wr" style="display:<?php echo $this->display; ?>">
+<div class="toggle">
+    Top Banners &amp; Icon <a onclick='FM.Account.showhelp(this, "TOPBANNERS", event);return false;'><img src="/images/icons/question_icon.gif" height="15" width="15" /></a>
+</div>
+<div id="updateTopBanners" class="module">
+		<?php //echo $this->form; ?>
+		<h3>Choose a banner type to upload</h3>	
+		
+		<form class="zend_form">		
+			<div><input type="radio"  class="cbx"  name="topbanner" id="topbannerleft" value="left"  onclick="FM.topBannerWidget.setSelected('left')"/><label >Small Left Banner <i>(238 x 174 max)</i> : </label> </div>
+			<div><input type="radio"  class="cbx"  name="topbanner" id="topbannerright" value="right" onclick="FM.topBannerWidget.setSelected('right')" /> <label>Large Right Banner <i> (663 x 174 max)</i> : </label></div>
+			<div><input type="radio" name="topbanner"  class="cbx" id="icon" value="right" onclick="FM.topBannerWidget.setSelected('icon')" /> <label>icon <i> (80 x 80 max)</i> : </label></div>
+			<div style="margin-top:.5em;width:80px;overflow:hidden;"><p>&nbsp;Current Icon : </p><img id="currenticon" height="80" width="80" src="/media/image/icons/<?php echo (is_object($this->icon)) ? $this->icon->getFileName() : ''; ?>" /></div>
+				  
+             <div id="topBannerImage" class="upload_image" >
+                <img src="/images/icons/upload.jpg" alt=""/>
+            </div>
+            
+          <span class="upload_btn">click to upload</span>
+            
+            <div id="topbannerlogo" class="upload_area">
+                <div id="spanSWFUploadTopBanner"></div>
+            </div>
+			<div class="upload_preview"><label>Image : </label><div></div></div>
+			<!--
+            <input name="create" id="create" class="submit" value="update banner" type="submit" onclick="FM.BannerWidget.topBannerUpdate(); return false;" >
+            -->
+		</form>
+	</div>
+</div>

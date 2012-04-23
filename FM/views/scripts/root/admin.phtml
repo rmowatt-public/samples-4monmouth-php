@@ -1,0 +1,52 @@
+<h3>Quick Links</h3>
+<div class="quicklinks">
+	<a class="memberOrgLink" href="/root/addbusiness">Manage Business</a>
+	<?php
+$HTML_SOURCE = 'http://www.youtube.com/watch?v=FjI0W1hKH6E&feature=grec_index';
+$match = explode('v=', $HTML_SOURCE);
+$match = explode('&', $match[1]);
+$video = $match[0];
+?>
+</div>
+<div class="quicklinks">
+	<a class="memberOrgLink" href="/root/addnp">Manage Non-Profit</a>
+</div>
+<div class="quicklinks">
+	<a class="memberOrgLink" href="/root/addsport">Manage Sport</a>
+</div>
+<div class="quicklinks">
+	<a class="memberOrgLink" href="/root/managemediakit">Update Media Kit</a>
+</div>
+<div class="quicklinks">
+	<a class="memberOrgLink" href="/root/colorpicker">Change Background Color</a>
+</div>
+<div class="quicklinks">
+	<a><input type="checkbox" onclick ="FM.Utilities.toggleNpBanners(this)" <?php echo ($this->npbanners) ? ' CHECKED ' : ''; ?> />&nbsp;Non Profit Banners Enabled</a>
+</div>
+<div class="quicklinks">
+	<a class="memberOrgLink" href="/root/managesiteemails">Manage Site Email Addresses</a>
+</div>
+<h3>Send An Email</h3>
+<div >
+<div style="padding:2pt;">
+	<form action="" method="POST">
+		<h2>Check All That Apply</h2>
+		<div style="padding:1pt;">
+			Businesses &nbsp;<input type="checkbox" name="target_2" />&nbsp;&nbsp;
+			Organizations &nbsp;<input type="checkbox" name="target_3"  />&nbsp;&nbsp;
+			Sports Teams &nbsp;<input type="checkbox" name="target_4" />&nbsp;&nbsp;
+		</div>
+		<div style="padding:1pt;">
+			Subject : <input type="text" name="subject" style="width:500px;" />
+		</div>
+		<div style="padding:1pt;margin:0px auto;">
+			<textarea name="message"></textarea>
+		</div>
+		<input type="submit" value="send" />
+	</form>
+</div>
+
+<object type="application/x-shockwave-flash" style="width:425px; height:350px;" data="http://www.youtube.com/v/<?= $video?>"><param name="movie" value="http://www.youtube.com/v/<?= $video?>" /></object> 
+<div>this is test text</div>
+<img src = "http://img.youtube.com/vi/<?= $video?>/default.jpg" />
+</div>

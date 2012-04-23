@@ -1,0 +1,48 @@
+<?php
+echo $this->partial('header.phtml');
+echo $this->layout()->header;
+?>
+<div class="holygrail">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+			<?php
+			if(!$this->layout()->payBanner) { ?>
+            <h6 class="left"></h6>
+            <h6 class="right"></h6>
+			<?php } else { ?>
+			
+			<div id="col1Banner">
+			<?php if(stristr($this->layout()->payBanner->getFile(), '.swf')){ ?>
+					<object width="514" height="50"><param name="movie" value="/media/image/paybanners/<?php echo $this->layout()->payBanner->getFile(); ?>"><param name="wmode" value="transparent"><embed src="/media/image/paybanners/<?php echo $this->layout()->payBanner->getFile(); ?>" width="514" height="50" wmode = 'transparent'></embed></object>
+			 <?php }else{ 
+			 	if($link = $this->layout()->payBanner->getLink()){echo "<a href='{$link}' target='_blank' >";} ?>
+						<img src="/media/image/paybanners/<?php echo $this->layout()->payBanner->getFile(); ?>" />
+			 <?php if($link) { ?></a><?php } ?>
+					<?php } ?></div>
+			<?php } ?>
+			<?php echo $this->layout()->content; ?>
+			<!-- Column 1 end -->
+	    </div>
+		<div class="col2">
+			<!-- Column 2 start -->
+			<h6></h6>
+			<?php
+			echo $this->partial('layout/leftcol3.phtml');
+			?>
+		   <!-- Column 2 end -->
+		</div>
+	</div>
+	
+	<div class="colright">				
+		<div class="col3">
+			<!-- Column 3 start -->
+            <h6></h6>
+			<?php
+			echo $this->partial('layout/rightcol3.phtml');
+			?>
+			<!-- Column 3 end -->
+		</div>
+	</div>    
+</div>
+<?php echo $this->partial('footer.phtml');?>

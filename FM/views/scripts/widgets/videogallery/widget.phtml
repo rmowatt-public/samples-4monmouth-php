@@ -1,0 +1,65 @@
+<?php //echo $this->album_array; ?>
+<style>
+div#photogallery_carousel_wrapper div.albumhead {
+	background:#73BE1E;
+	color:white;
+	font-size:10pt;
+	padding:3px;
+	margin-top:.5em;
+}
+</style>
+ <div id="photogallery">
+    <div id="photogallery_upload">
+    	<div id="photogallery_carousel_wrapper">
+    
+    	<div>
+    	
+    	
+    	
+    	</div>
+
+ <?php if($this->admin) { ?>  
+ <div id="videoadmin">
+       <form class="zend_form">
+           </div>
+           <div>
+               <label>description</label><textarea id="tagline" name="tagline"></textarea>
+           </div>           
+           <div class="photoimage">
+               <label>url</label>
+           </div>           
+            <input type="submit" class="submit" value="add video" onclick="return false;" />
+            
+       </form>	
+       
+       <h2>Add an album</h2>
+        <form class="zend_form">
+        <div>
+               <label>name</label><input type="text" id="albumname" name="albumname" />
+           </div>  
+           <div>
+               <label>description</label><textarea id="albumdesc" name="albumdesc"></textarea>
+           </div>                  
+            <input type="submit" class="submit" value="add album" onclick="FM.PhotoGallery.addAlbum();return false;" />      
+       </form>	
+</div>
+
+<? }?>
+ 	</div>    
+</div>
+</div>
+<?php if($this->admin) { ?>  
+<style>
+	.crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-list li,
+            .crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-item {
+	height:90px;
+            }
+            
+     .crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-list li,
+         .crusade .col1 div#content #media #photogallery div#galleryadmin {
+		margin-top:.5em;
+		padding:.5em;
+		border:1px solid black;
+}
+</style>
+<?php } ?>

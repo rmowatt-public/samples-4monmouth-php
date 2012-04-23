@@ -1,0 +1,23 @@
+<? Zend_Loader::loadClass('FM_Components_BaseComponent') ?>
+<div class="tab_content" id="realestate">
+	<h6>R/E Listings</h6>
+	<?php //print_r($this->estates);exit; ?>
+	<div style="max-height:800px;overflow-y:auto;overflow-x:hidden;">
+	<?php foreach ($this->listings as $index=>$listing) { ?>
+	
+		<div class="estates" id="estate_<?php echo $listing['id']; ?>">
+		<?php $link = FM_Components_BaseComponent::cleanURL($listing['link']); ?>
+			<div class="reimagewrap"><a href="<?php echo $link; ?>" target="_blank"><img src="/media/image/productimages/<?php echo $listing['image']; ?>"  /></a></div>
+			<div>
+				<span>Lisitng #: <?php echo $listing['name']; ?></span>
+				<div ><?php echo $listing['address']; ?></div>
+				<div ><?php echo $listing['city'] . ', ' . $listing['state'] . ' ' . $listing['zip'] ?></div>
+				<div><?php echo $listing['description']; ?></div>
+				<?php if($this->admin) { ?>                
+                	<img class="redelete" src="/images/icons/remove.png" onclick = "FM.RealEstateList.deleteNode('<?php echo $listing['id']; ?>')"/>
+                <?php } ?>
+                </div>
+		</div>	
+	<?php } ?>
+	</div>
+</div>

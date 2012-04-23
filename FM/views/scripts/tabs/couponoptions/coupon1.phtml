@@ -1,0 +1,17 @@
+<div class="<?php echo $this->obj->getClass(); ?>">	
+	<div style="width:200px;float:left;">
+				<div class="cpnOffer"><?php echo $this->obj->getOffer(); ?></div>
+				<?php if($this->obj->getValid()) { ?>
+					<div class="cpnValid"><span>Ends:</span> <?php echo $this->obj->getFormattedValid(); ?></div>
+				<?php } ?>
+				<div class="cpnCopy"><?php echo $this->obj->getCopy(); ?></div>
+				
+				<div class="clear">&nbsp;</div>
+				<div style="position:relative">
+					<div class="cpnSponsor"><?php echo $this->obj->getSponsor(); ?></div>
+					<div class="cpnImg"><img src = "/media/image/couponlogos/<?php echo $this->obj->getFile(); ?>" /></div>
+				</div>
+	</div>
+	<div style="float:right;"><img src="/media/image/coupon_templates/logo_coupon_vertical.png" /></div>
+	<div class="clear">&nbsp;</div>
+</div>

@@ -1,0 +1,88 @@
+<div id="search">
+    <?php
+    if($this->results){?>
+    <?php	
+    	echo $this->results;
+     } else { 
+     
+     if($this->noResults) {	?>
+     	<h1 style="background-color:red;padding-top:1em;padding-bottom:1em;color:white"><div style="text-align:center;font-size:12pt;">Search Returned No Results. Please try again.</div></h1>
+     <? } ?>
+    <form method="POST">
+        <div id="searchTabs"><img src="/images/search/tabs/b01.gif" /><img src="/images/search/tabs/b02.gif" /><a href="/search/orgs"><img src="/images/search/tabs/b03.gif" /></a><img src="/images/search/tabs/b04.gif" /></div>
+        <div id="searchTownsImgs" >
+        	<img src="/images/search/bareas_1.gif"  />
+            <div>
+                <div class="townName first">
+                    <input type="checkbox" name="" value="" id="" class="regcbx_all"  <?php if(!$_GET['rid']){echo ' CHECKED ';} ?>  />All Areas
+                </div>
+                <div class="townName">
+                    <input type="checkbox" class="regcbx" value="" name="chkbx_region_1" <?php if($_GET['rid'] && $_GET['rid'] == 1){echo ' CHECKED ';} ?> />
+                    Marlboro /
+                    <br/>
+                    Colts Neck
+                </div>
+                <div class="townName">
+                    <input type="checkbox" class="regcbx" value="" name="chkbx_region_2" <?php if($_GET['rid'] && $_GET['rid'] == 2){echo ' CHECKED ';} ?> />Manalapan
+                </div>
+                <div class="townName">
+                    <input type="checkbox" class="regcbx" value="" name="chkbx_region_3" <?php if($_GET['rid'] && $_GET['rid'] == 3){echo ' CHECKED ';} ?> />Freehold
+                </div>
+                <div class="townName">
+                    <input type="checkbox" class="regcbx" value="" name="chkbx_region_4" <?php if($_GET['rid'] && $_GET['rid'] == 4){echo ' CHECKED ';} ?> />
+                    Howell /
+                    <br/>
+                    Farmingdale
+                </div>
+            </div>
+        	<img src="/images/search/areas_2.gif" />
+            <div>
+                <div class="townName first">
+                    <input type="checkbox" class="regcbx" <?php if($_GET['rid'] && $_GET['rid'] == 5){echo ' CHECKED ';} ?> value="" name="chkbx_region_5" />
+                    Aberdeen - Matawan /
+                    <br/>
+                    Hazlet
+                </div>
+                <div class="townName">
+                    <input type="checkbox" class="regcbx" value="" name="chkbx_region_6" <?php if($_GET['rid'] && $_GET['rid'] == 6){echo ' CHECKED ';} ?> />
+                    Holmdel /
+                    <br/>
+                    Middletown
+                </div>
+                <div class="townName">
+                    <input type="checkbox" class="regcbx" value="" name="chkbx_region_7" <?php if($_GET['rid'] && $_GET['rid'] == 7){echo ' CHECKED ';} ?> />
+                    RedBank /
+                    <br/>
+                    Eatontown
+                </div>
+            </div>
+        	<!--<img src="/images/search/area_names2.gif" />-->
+        </div>
+        
+        <?php
+        echo $this->towns;
+    	?>
+        
+    	<div id="zip">
+    		<h5><span class="lwr">or</span> Zip Code</h5>
+    		<div id="searchZip"><input type="text" name="zip" /></div>
+    	</div>
+        	
+        <?php
+            echo $this->cats;
+        ?>
+        
+    	<div id="keywords">
+    		<h5><span class="lwr">by</span> keyword</h5>
+    		<div id="searchKey">
+    			<input type="text" name="keyword" id="keyword" />
+    			<div><i>eg: florist, pizzeria, plumbing</i></div>
+    		</div>
+    	</div>
+        
+    	<div id="searchSubmit">
+    	   <input type="submit"  class="submit"/>
+    	</div>
+    </form>
+    <?php } ?>
+</div>

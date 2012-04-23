@@ -1,0 +1,60 @@
+<div id="categories">
+	<h5><span class="lwr">by</span> categories</h5>
+	<div id="searchCats">
+	<span><input type="checkbox" name="chkbx_category_0" id="chkbx_category_0"  class="catcbx_all" " checked/>ALL</span>
+	<?php	foreach($this->cats as $index=>$category) {
+			$main = $category['main'];
+			if(!is_object($main)){continue;}
+			$subs = (array_key_exists('subs', $category))  ? $category['subs'] : false;
+			$catName = str_ireplace(' ', '&nbsp;', $main->getName());?>
+			<span>
+				<input type="checkbox" class="catcbx" name="chkbx_category_<?php echo $main->getId(); ?>" id="category_<?php echo $main->getId(); ?>" />
+				<?php echo $catName; ?>
+				<?php if($subs) { ?>
+					<ul class="subcats" id="subcategory_<?php echo $main->getId(); ?>">
+					<input  type="checkbox" style="display:none" name="chkbx_all_<?php echo $main->getId(); ?>" id="chkbx_all_<?php echo $main->getId(); ?>" />
+						<?php foreach ($subs as $key=>$sub) { 
+								$subName = ucwords(strtolower(str_ireplace(' ', '&nbsp;', $sub->getName()))); ?>
+								<li>
+									<input type="checkbox" class="subcbx" name="chkbx_subcat_<?php echo $sub->getId(); ?>_<?php echo $main->getId(); ?>" id="chkbx_category_<?php echo $sub->getId(); ?>" onclick="FM.Search.toggleSubcatAll(this, <?php echo $main->getId(); ?>)" />
+									<label><?php echo $subName; ?></label>
+								</li>
+						<?php }  ?>
+					</ul>
+				<?php } ?>
+			</span>
+		<?php }?>
+		
+	</div>
+</div>
+
+
+<!--
+<div id="categories">
+	<h5><span class="lwr">by</span> categories</h5>
+	<div id="searchCats">
+	<span><input type="checkbox" name="chkbx_category_0" id="chkbx_category_0" onclick="FM.Search.selectAll(this)" CHECKED />ALL</span>
+	<?php	foreach($this->cats as $index=>$category) {
+			$main = $category['main'];
+			if(!is_object($main)){continue;}
+			$subs = (array_key_exists('subs', $category))  ? $category['subs'] : false;
+			$catName = str_ireplace(' ', '&nbsp;', $main->getName());?>
+			<span>
+				<input type="checkbox" class="catcbx" name="chkbx_category_<?php echo $main->getId(); ?>" id="chkbx_category_<?php echo $main->getId(); ?>" onclick="FM.Search.toggleSubcats(<?php echo $main->getId(); ?>)" />
+				<?php echo $catName; ?> 
+			<?php if($subs) {
+				echo "<div class='subcats'  style='display:none' id='sub_{$main->getId()}'><div style='display:inline'>"; ?>
+				<div><span style="padding:0px;margin:0"><input type="checkbox" id="chkbx_all_<?php echo $main->getId(); ?>" name="chkbx_<?php echo $main->getId(); ?>" CHECKED onclick="FM.Search.toggleSubSelect(<?php echo $main->getId(); ?>, this)" /></span><label>All</label></div>
+				<?php foreach ($subs as $key=>$sub) { 
+					$subName = str_ireplace(' ', '&nbsp;', $sub->getName()); ?>
+					<div><span style="padding:0px;margin:0"><input type="checkbox" class="subcbx" name="chkbx_subcat_<?php echo $sub->getId(); ?>_<?php echo $main->getId(); ?>" id="chkbx_category_<?php echo $sub->getId(); ?>"  onclick="FM.Search.subcatSelect(this, 'chkbx_all_<?php echo $main->getId(); ?>')" /></span><label><?php echo $subName; ?></label></div>
+			<?php } 
+			echo "</div></div>"; ?>
+		<?php } ?>
+			</span>
+		<?php }?>
+		
+	</div>
+</div>
+
+-->

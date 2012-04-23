@@ -1,0 +1,25 @@
+<div class="clientLists">
+<h3>Sports</h3>
+	<?php print $this->catJumper; ?>
+	<?php print $this->search; ?>
+	<ul class="client_nav">
+				<li class="sportClient" id="clientList">Client List</li>
+				<li class="addSportClient" id="addClientList">Add A Client</li>
+				
+	</ul>
+	<div>		
+		<div id="sportClients" class="client active">
+			<?php print $this->clients; ?>
+		</div>
+		
+		<div id="addSportClients" class="client">
+			<?php print $this->form; ?>
+		</div>		
+	</div>
+	
+</div>
+<?php
+	if($this->error) {
+		print "<script>FM.Client.toggleNav($('addClientList'))</script>";
+	}
+?>

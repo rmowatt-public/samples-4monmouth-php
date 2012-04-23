@@ -1,0 +1,22 @@
+<div class="tab_content" id="<?php echo $this->id ?>"  <?php echo $this->selected ? 'style="display:inline"' : '' ?> >
+<div id="showsignin"  >
+	<h6>SIGN IN</h6>
+	<div>PLEASE SIGN IN or <a onclick="FM.Account.toggleSportsSignIn('showrequest', 'showsignin')">request an account</a></div>
+	<div class="sportsSigninForm">
+		<div><label>user name : </label>&nbsp;<input type="text" name="mediauname" id="mediauname" /></div>
+		<div><label>password : </label>&nbsp;<input type="password" name="mediapwd" id="mediapwd" /></div>
+		<div style="margin-left:20em;"><input type="submit" value="sign in"onclick="FM.Account.sportsSignIn($('mediauname').value, $('mediapwd').value);return false;"  /></div>
+	</div>
+</div>
+<div id="showrequest" style="display:none;">
+<h6>Request Account</h6>
+	<div>REQUEST AN ACCOUNT or <a onclick="FM.Account.toggleSportsSignIn('showsignin' , 'showrequest')">sign in</a></div>
+	<div class="sportsSigninForm">
+		<div><label>full name : </label>&nbsp;<input type="text" name="rname" id="rname" /></div>
+		<div><label>email : </label>&nbsp;<input type="text" name="remail" id="remail" /></div>
+		<div><label>note : </label><textarea id="rnote" value=''></textarea></div>
+		<div style="margin-left:22em;"><input type="submit" value="send request" onclick="FM.Account.sportsRequestAccount($('rname').value, $('remail').value, $('rnote').value);return false;"  /></div>
+	</div>
+</div>
+	<?php //echo $this->layout()->photogallery; ?>
+</div>

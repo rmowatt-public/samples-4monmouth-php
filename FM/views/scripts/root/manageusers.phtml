@@ -1,0 +1,39 @@
+<h3>Manage <?php echo $this->type; ?> Users</h3>
+<?php echo $this->userform; ?>
+<div id="users" class="mod">
+	<h4>Users</h4>
+	<div class="lists">
+		<table class="listing" cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+					<th >id</th>
+					<th class="fullname">Full Name</th>
+					<th class="username">User Name</th>
+					<th class="email">Email</th>
+					<th>Phone</th>
+					<th>Maillist</th>
+					<th>Details</th>
+					<th>Delete</th>
+				</tr>
+				<?php 
+                $i = 0;
+				foreach ($this->users as $user) { 
+					if($user['uid'] == ''){continue;}
+				?>				
+				<tr id="tr_<?php echo $user['uid'] ?>" class="<?php echo ($i % 2 == 1) ? 'odd' : '' ?>">
+					<td class="id"><?php echo $user['uid'] ?> </td>
+					<td class="fullname" ><?php echo $user['firstname'] ?> <?php echo $user['lastname'] ?></td>
+					<td class="username" ><?php echo $user['uname'] ?> </td>
+					<td class="email"><?php echo $user['email'] ?> </td>
+					<td class="phone"><?php echo $user['phone'] ?> </td>
+					<td class="maillist"><input type="checkbox" onclick="FM.UserRoot.toggleUserEmail(this, <?php echo $user['uid'] ?>)" <?php echo ($user['maillist']) ? ' CHECKED ' : ''; ?> /></td>
+					<td class="detail"><a href="/root/userdetails/<?php echo $user['uid'] ?>"><img src="/images/root/img/login-icon.gif" alt="add" height="16" width="16"></a></td>					
+					<td class="delete"><div onclick="FM.UserRoot.deleteUser(<?php echo $user['uid'] ?>)"><img src="/images/icons/remove.png" alt="add" height="16" width="16"></div></td>
+				</tr>	
+			<?
+			$i++;
+			} ?>
+		</tbody>
+	</table>
+	</div>	
+</div>

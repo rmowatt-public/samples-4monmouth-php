@@ -1,0 +1,106 @@
+<h3>Manage Index Banners</h3>
+<div class="imageBannerForm">
+<?php echo $this->form; ?>
+</div>
+<div id="imageBanners">
+	<div>
+	<h2 style="clear:both;">Full Size</h2>
+		<div class="bannerOption">
+			<input type="radio" name="selectedBanner" onclick = "FM.ImageBannerRoot.update(1)" />
+			<div id="singleBanner">940 x 120
+						<div onclick="Effect.toggle('hidden940', 'blind')" style="cursor:pointer;">Show Options</div>
+			</div>
+		</div>
+		<div id="hiddenLarge">
+			<div id="hidden940" style="display:none;">
+				<div style="clear:both;width:939px;height:320px;overflow:scroll;border:1px solid black;">
+					<?php
+					//print_r($this->banners940);
+						foreach ($this->banners940 as $index=>$banner) {
+							print $banner->getName();
+							print "<div class='option940' id='bannerOption_{$banner->getId()}' style='background-image:url(/media/image/imagebanners/{$banner->getFile()})' onclick=\"FM.ImageBannerRoot.updateImage('singleBanner', '/media/image/imagebanners/{$banner->getFile()}', {$banner->getId()})\">{$banner->getFile()}</div>";
+						}
+					?>
+				</div>
+			</div>
+		</div>
+		<div clas="clear">&nbsp;</div>
+		<h2>Large Right</h2>
+		<?php //print_r($this->banners690); ?>
+		<div class="bannerOption">
+			<input type="radio" name="selectedBanner"  />
+			<div id="bannerSmallLeft">245 x 120
+									<div onclick="Effect.toggle('hidden245', 'blind')" style="cursor:pointer;">Show Options</div>
+								</div>
+			<div id="bannerLargeRight">690 x 120
+								<div onclick="Effect.toggle('hidden690', 'blind')" style="cursor:pointer;">Show Options</div></div>
+		</div>
+		<div style="border:1px solid red;">
+		<div class="bannerOption" style="margin-left:2.4em;">
+			<div id="hiddenSmallLeft" >
+				<div id="hidden245" style="display:none;">
+					<div style="clear:both;width:245px;height:200px;overflow:scroll;border:1px solid black;">
+						<?php
+						//print_r($this->banners940);
+							foreach ($this->banners245 as $index=>$banner) {
+								print $banner->getName();
+								print "<div class='option940' id='bannerOption_{$banner->getId()}' style='background-image:url(/media/image/imagebanners/{$banner->getFile()})' onclick=\"FM.ImageBannerRoot.updateImage('bannerSmallLeft', '/media/image/imagebanners/{$banner->getFile()}', {$banner->getId()})\">{$banner->getFile()}</div>";
+							}
+						?>
+					</div>
+				</div>
+			</div>
+			<div id="hiddenLargeRight">
+				<div id="hidden690" style="display:none;" >
+					<div style="clear:both;width:690px;height:200px;overflow:scroll;border:1px solid black;">
+						<?php
+						//print_r($this->banners940);
+							foreach ($this->banners690 as $index=>$banner) {
+								print $banner->getName();
+								print "<div class='option940' id='bannerOption_{$banner->getId()}' style='background-image:url(/media/image/imagebanners/{$banner->getFile()})' onclick=\"FM.ImageBannerRoot.updateImage('bannerLargeRight', '/media/image/imagebanners/{$banner->getFile()}', {$banner->getId()})\">{$banner->getFile()}</div>";
+							}
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear">&nbsp;</div>
+		</div>
+		
+		<div style="border:1px solid green;">
+		<h2>Large Left</h2>
+		<div class="bannerOption"><input type="radio" name="selectedBanner" /><div id="bannerLargeLeft">609 x 120
+		<div onclick="Effect.toggle('hidden690b', 'blind')" style="cursor:pointer;">Show Options</div></div><div id="bannerSmallRight">245 x 120
+		<div onclick="Effect.toggle('hidden245b', 'blind')" style="cursor:pointer;">Show Options</div></div></div>
+		
+		<div class="bannerOption" style="margin-left:2.4em;">
+			<div id="hiddenLargeLeft" >
+				<div id="hidden690b" style="display:none;" >
+					<div style="clear:both;width:690px;height:200px;overflow:scroll;border:1px solid black;">
+						<?php
+						//print_r($this->banners940);
+							foreach ($this->banners690 as $index=>$banner) {
+								print $banner->getName();
+								print "<div class='option940' id='bannerOption_{$banner->getId()}' style='background-image:url(/media/image/imagebanners/{$banner->getFile()})' onclick=\"FM.ImageBannerRoot.updateImage('bannerLargeLeft', '/media/image/imagebanners/{$banner->getFile()}', {$banner->getId()})\">{$banner->getFile()}</div>";
+							}
+						?>
+					</div>
+				</div>
+			</div>
+			<div id="hiddenSmallRight">
+				<div id="hidden245b" style="display:none;">
+					<div style="clear:both;width:245px;height:200px;overflow:scroll;border:1px solid black;">
+						<?php
+						//print_r($this->banners940);
+							foreach ($this->banners245 as $index=>$banner) {
+								print $banner->getName();
+								print "<div class='option940' id='bannerOption_{$banner->getId()}' style='background-image:url(/media/image/imagebanners/{$banner->getFile()})' onclick=\"FM.ImageBannerRoot.updateImage('bannerSmallRight', '/media/image/imagebanners/{$banner->getFile()}', {$banner->getId()})\">{$banner->getFile()}</div>";
+							}
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>

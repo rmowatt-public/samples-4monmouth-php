@@ -1,0 +1,50 @@
+<?php
+date_default_timezone_set('America/Boston');
+$i=	0;
+foreach($this->news as $itemi) {
+	$time = strstr(substr($itemi->pubDate(),-5), 'T') ? $itemi->pubDate() : substr($itemi->pubDate(),0,25) . ' GMT';
+	$newsYear = date('Y', strtotime($time));
+	$thisYear = date('Y');
+	if($newsYear < $thisYear) {
+		continue;
+	}
+	$itemi['time'] = $time;
+	$items[date('mdHia',strtotime($time)) . $i] = $itemi;
+	$i++;
+}
+if(is_array($items)) {
+	ksort($items, SORT_REGULAR);
+	$items = array_reverse($items);
+}
+
+?>
+
+<div class="rssglobal <?php echo $this->class ?>" id="<?php echo $this->id ?>">
+	<div class="inner">
+	    <h3>
+	        <?php echo $this->title; ?>
+	        <img src="/images/indexicons/<?php echo $this->icon; ?>"/></h3>
+	    <div class="makeScroll">
+	        <div class="rssContent">
+	            <?php 
+	            $i = (isset($this->limit) && $this->limit > 0) ? $this->limit : 0;
+	            $j = 0;
+	            if(is_array($items)){
+	            	foreach($items as $k=>$item) {
+	            		if($j < $i) {
+	            			//	$time = strstr($item->pubDate(), 'T') ? $item->pubDate() : substr($item->pubDate(), 0, 25) . ' GMT';
+	            			print '<div class="item">';
+	            			print '<div class="time">' .date('M d' , strtotime($item['time'])) . '<br />' . date('g:i a' , strtotime($item['time'])) .'</div> ';
+	            			print '<div class="link"><a class="rss_link" href="'.$item->link.'">'.$item->title().'</a></div>';
+	            			print '</div>';
+	            		}
+	            		if($i > 0) {
+	            			$j++;
+	            		}
+	            	}
+	            }
+	            ?>
+	        </div>
+	    </div>
+	</div>
+</div>

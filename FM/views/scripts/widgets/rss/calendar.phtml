@@ -1,0 +1,78 @@
+<div class="rssglobal <?php echo $this->class ?>" id="<?php echo $this->id ?>">
+    <div class="inner">
+        <h3>
+            <?php echo $this->title; ?>
+            <img src="/images/indexicons/<?php echo $this->icon; ?>"/></h3>
+        <div class="makeScroll">
+            <div class="rssContent">
+                <!--<h4>Upcoming Events!</h4>-->
+                <?php foreach ($this->events as $evt) {
+                foreach ($evt as $datetag=>$day) { $date = date('l - F j, Y', strtotime($datetag)); 
+                $i = 1;
+                ?>
+                <?php foreach ($day->getEvents() as $event) {
+                	
+                	if(!$event['frontPage']){continue;}?>
+                <?if($event['type'] != 4){ ?>
+                <?if( $i == 1){?>
+                 <h5><?= strtoupper($date) ?></h5>
+                <?php } ?>
+                <div class="calendar_event_rss">
+                    <strong><?= $event['name'] ?></strong><br>
+                    <strong>Sponsor: </strong><?= $event['orgname'] ?><br>
+                    <strong>Time: </strong><?= $event['time'] ?><br>
+                    <strong>Location: </strong><?= $event['location'] ?><br>
+                    <!--
+                    <strong>Description:</strong>
+                    <?= $event['description'] ?>                    
+                    <br/>
+                    -->
+                    <?php
+                    print '<div class="event"><a href="#event_'.$event['eventId'].'"  class="event_view">details ...</a>
+							<div id="event_' . $event['eventId'] . '" class="event_details" style="display:none">
+								<div class="event_name">' . $event['name'] . '</div>
+								<div class="event_time"><strong>Sponsor: </strong>' . $event['orgname'] . '</div>
+								<div class="event_time"><strong>Date: </strong>' . date('l - F j, Y', strtotime($datetag)) . '</div>
+								<div class="event_time"><strong>Time: </strong>' . $event['time'] . '</div>
+								<div class="event_location"><strong>Location: </strong>' . $event['location'] .'</div>
+								<div class="event_description"><strong>Description:</strong>'. $event['description'] .'</div>
+								<div style="text-align:right"><!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style "
+		addthis:title="'. $event['name'] .'"
+		addthis:url="http://4monmouth.com/viewevent/' . $event['eventId']. '"
+        addthis:description="'. $event['description'] .'"
+        style="float:right;width:100px;"
+>
+
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e5e6f3e2d283d26"></script>
+<!-- AddThis Button END --></div>
+							</div>
+						</div>';
+                    ?>
+                </div>
+                <?php }
+                $i++;
+                }
+                } } ?>
+            </div>
+        </div>
+    </div>
+</div>
+<script>	
+	jQuery(" .event").live("click", function(){
+		var event = jQuery(this).children("div.event_details");
+		jQuery.fn.colorbox({
+			inline : true,
+			href : event.show(),
+			width : "400",
+			open : true,
+			opacity : .4,
+			onCleanup : function(){
+				event.hide();
+			}
+		});
+		return false;			
+	});
+</script>

@@ -1,0 +1,14 @@
+<div>
+<h3>Your Current Banners</h3>
+<?php echo $this->paginationControl($this->banners,
+                             'Sliding',
+                             'pagination/default.phtml'); ?>
+<?php 
+	foreach ($this->banners as $banner) {
+			print "<div class='bannerWrap'>" .  
+			"<a onclick='Shadowbox.open({content:\"{$banner->get('path')}/{$banner->get('medianame')}\", player:\"iframe\"});' ><img src='{$banner->get('path')}/{$banner->get('medianame')}' alt='{$banner->get('alt')}' height='55' width='150' /></a>
+					<div class='bannerInfo'><div>name : {$banner->get('name')}</div><div>url : {$banner->get('url')}</div><div>image height/width: {$banner->get('height')}px/{$banner->get('width')}px</div><div>location : {$banner->get('path')}/{$banner->get('medianame')}</div
+					<div><a onclick = 'FM.Banner.edit({$banner->get('id')}, this)'>edit</a>&nbsp;<a href='/admin/banner/delete/{$banner->get('id')}'>delete</a></div></div><div style='clear:both;display:'></div></div>";
+		}
+?>
+</div>

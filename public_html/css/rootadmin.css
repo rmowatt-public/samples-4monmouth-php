@@ -1,0 +1,372 @@
+/**
+ * @section     ADMIN
+ * @subsection  
+ */
+
+#rootadmin .preview {
+	height : 18px;
+	margin-bottom : 6px;
+}
+#rootadmin .preview strong {
+	float:left;
+	font-weight : bold;
+	margin-right:10px;
+	text-align:right;
+	width:120px;	
+}
+#rootadmin .preview img {
+	cursor : pointer;
+	float : left;
+}
+#rootadmin .preview span {
+	float : left;
+	font-size: 10px;
+	margin-left : 4px;
+}
+#rootadmin .banner,
+#rootadmin .fullbanner,
+#rootadmin .paybanner {
+	cursor : pointer;
+}
+
+
+
+/*
+ * @section 			middle
+ * @subsection		wrapper
+ */
+
+div.wrapper {
+	padding : 14px;
+}
+
+
+/****
+**/
+
+dl.zend_form dd ul.errors {
+	clear:both;
+	list-style: none;
+	padding: 0;
+	margin: 5px;
+}
+
+dl.zend_form dd ul.errors li {
+	float: left;
+	margin: 0 0.15em;
+	font-size: 12px;
+	color: crimson;
+}
+
+
+
+
+
+
+
+.zend_form input#create
+{
+	width:75px;
+	float: right;
+	position:absolute;
+	right:0px;
+	margin-right:4em;
+}
+.required:before
+{
+	content: '* ';
+}
+.optional:before
+{
+	content: ' ';
+}
+
+
+
+
+
+
+
+
+.clear {
+	clear:both;
+	line-height:0px;
+}
+
+dl.zend_form dd input.chkbx {
+	width:10px;
+}
+
+
+div#business_allClients table{
+	width:600px;
+	margin:0px auto;
+}
+
+div#business_allClients table td.head{
+	background:green;
+	color:white;
+}
+
+div#business_allClients table td{
+	padding:5px 5px 5px 10px;
+	margin:0px auto;
+}
+
+
+
+
+/*****************************
+Admin Email
+*****************************/
+
+div#rootadmin div.emailSectionWrapper div.meta {
+	cursor:pointer;
+	font-size:12pt;
+	color:green;
+	padding:.2em;
+	border-bottom:1px solid grey;
+}
+
+div#rootadmin div.emailSectionWrapper div.message {
+	padding:.5em;
+	font-size:10pt;
+}
+
+div#rootadmin div.emailSectionWrapper div.from {
+	font-size:9pt;
+	width:400px;
+	float:left;
+}
+
+div#rootadmin div.emailSectionWrapper div.timestamp {
+	width:200px;
+	float:right;
+	color:black;
+	font-size:9pt;
+}
+
+
+/***********************************8
+	ADMIN COUPONS
+***************************************/
+
+div#couponjumpboxWrap {
+	padding:1em;
+	text-align:right;
+}
+
+
+
+span#adminCreateNewmember a{
+	color:#FF6F00;
+	text-decoration:underline;
+}
+
+span#adminCreateNewmember a:hover{
+	cursor:pointer;
+	color:black;
+}
+
+span.statusclose {
+	color:white;
+	font-size:12pt;
+	float:right;
+	padding-right:1em;
+}
+
+
+
+
+
+div#addBannerTemplateWrapper input.ckbx {
+	width:15px;
+}
+
+div#addBannerTemplateWrapper .heightwidth {
+	width:30px;
+}
+/**********************
+INDEX BANNERS
+**********************/
+
+div.bannerOption {
+	clear:both;
+	width:970px;
+	margin:.3em;
+	padding:.3em;
+}
+
+div.bannerOption div {
+	color:white;
+	font-size:14pt;
+	text-align:center;
+}
+
+div.imageBannerForm {
+	width:600px;
+	border:1px solid red;
+}
+
+div#imageBanners {
+	margin-left:-195px;
+}
+
+div.bannerOption input{
+	width:15px;
+	float:left;
+}
+
+div#singleBanner {
+	display:block;
+	width:940px;
+	height:120px;
+	background:green;
+	float:left;
+}
+
+div#bannerSmallRight, div#bannerSmallLeft
+{
+	width:245px;
+	height:120px;
+	background:red;
+}
+div#hiddenSmallLeft, div#hiddenSmallRight{
+	width:245px;
+	min-height:20px;
+}
+
+
+div#bannerLargeRight, div#bannerLargeLeft {
+	width:690px;
+	height:120px;
+	background:blue;
+}
+
+div#hiddenLargeRight, div#hiddenLargeLeft{
+	width:690px;
+	min-height:20px;
+}
+
+div#bannerSmallLeft, div#bannerLargeLeft,
+div#hiddenSmallLeft, div#hiddenLargeLeft {
+	float:left;
+}
+
+
+div#bannerSmallRight, div#bannerLargeRight,
+div#hiddenSmallRight, div#hiddenLargeRight {
+	float:left;
+	margin-left:3px;
+}
+
+div.option940 {
+	margin-top:.5em;
+	width:940px;
+	height:120px;
+}
+
+div#hidden940
+{
+	padding-left:2.6em;
+	min-height:20px;
+}
+
+div#hidden245 {
+	
+}
+
+div#hiddenLarge {
+	min-height:20px;
+}
+
+div.selTab {
+	width:150px;
+	text-align:center;
+	font-size:12pt;
+	color:white;
+	background:blue;
+	float:left;
+	cursor:pointer;
+	padding:5px;
+	margin:2px 2px 0 0;
+	
+}
+
+div#feedback div.feedback div.mail {
+	width:350px;
+	float:left;
+	color:#FF6F00;
+	font-size:11pt;
+}
+
+div#feedback div.feedback div.approved{
+	width:100px;
+	float:right;
+}
+
+div#feedback div.feedback div.date{
+	width:150px;
+	float:left;
+	color:#FF6F00;
+	font-size:8pt;
+}
+
+div#feedback div.feedback {
+	padding-top:5px;
+	border-bottom:1px solid #BBD9EE;
+}
+
+div#feedback div.feedback div.feedbackCopy{
+	padding-top:5px;
+	padding-bottom:5px;
+	font-size:9pt;
+}
+
+
+  .banner{
+        border : 1px solid #cdcdcd;
+        background : #ededed;
+        padding : 4px;
+        margin : 15px 25px 0;
+        width : 238px;
+    }
+           .banner img {
+                width: 100%;
+                height: 40px;
+            }
+           .banner .copy {
+                color : #545454;
+                font-size : 11px;
+                line-height: 12px;
+            }
+          .banner h1 {                
+                color: #78C129;
+                font-size: 15px;
+                margin : 0;
+            }
+       .banner.temp3 {
+            overflow : auto;
+        }
+           .banner.temp3 img {
+                float : left;
+                height : 60px;
+                margin: 0 3px 0 0;
+                width : 60px;
+            }
+
+
+
+div.managesiteemails {
+	padding:12px;
+	
+	margin:0px auto;
+	background-color:white;
+}
+
+div.managesiteemails table td,
+div.managesiteemails table th {
+	text-align:left;
+	background-color:white;
+	padding:3px;
+}

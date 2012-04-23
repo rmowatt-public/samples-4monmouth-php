@@ -1,0 +1,45 @@
+<div id="coupons_wr2" style="display:<?php echo $this->display; ?>">
+	<div class="toggle">Create A Coupon <a onclick='FM.Account.showhelp(this, "CREATECOUPON", event)'><img src="/images/icons/question_icon.gif" height="15" width="15" /></a></div>
+	<div id="createCoupons" class="module">
+		<div id="coupons">
+			<?php
+				foreach ($this->templates  as $template) { ?>
+					<div class="coupon">
+						<input id="ct_<?php echo $template->getId() ?>" type="radio" name="template" value="<?php echo $template->getId() ?>" class="coupontemplateradio" onclick="FM.CouponWidget.setSelected(this)">
+						<img src="/media/image/coupon_templates/<?php echo $template->getImage(); ?>" title="<?php echo $template->getName(); ?>" />
+					</div>
+			<?php	} ?>
+		</div>
+		<div id="createCouponFormWrapper">
+			<form class="zend_form">
+				<div><label class="required">B2B only : </label><input type="checkbox" name="btb" id="btb" style="width:20px;" /></div>
+				<div><label class="required">reference name :</label><input type="text" name="code" id="code" value="" /></div>
+				<div><label class="required">sponsor : </label><input type="text" name="sponsor" id="sponsor" value="" /></div>
+				<div><label class="required">offer : </label><textarea name="offer" value="" id="offer" rows="2" ></textarea></div>
+				
+					<div class="cdatepicker">
+            <label for="datetag">
+                valid through: 
+            </label>
+            <input name="cdatepicker_input" id="cdatepicker_input" />
+            <input name="valid" id="valid" type="hidden"/>
+        </div>
+				<div><label class="required">copy : </label><textarea name="copy" value="" id="copy" rows = "4"></textarea></div>			
+				<div class="upload_preview"><label>Image : </label><div></div></div>
+	            
+	            <div id="couponlogo" class="upload_image">
+	                <img src="/images/icons/upload.jpg" alt="50x50"/>
+	            </div>
+	            
+	            <span class="upload_btn"><b>click to upload</b><i>50px x 50px</i></span>
+	            
+	            <div id="couponswf" class="upload_area">
+	                <div id="spanSWFUploadButton"></div>
+	            </div>  
+				<input type="hidden" id="couponMediaId" value='' />
+				<div><input type="submit" class="submit" value="clear" onclick="FM.CouponWidget.clear();return false" /><input type="submit" class="submit" value="create coupon" onclick="FM.CouponWidget.create();return false" /></div>
+	            
+			</form>
+		</div>
+	</div>
+</div>

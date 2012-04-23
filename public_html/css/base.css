@@ -1,0 +1,2869 @@
+/**
+ * @author		Richard Mowatt, TJ Eastmond, Filipe Araujo
+ * @version		2.0
+ * @since		1.0
+ *
+ *
+ * @lastChange	File rewrite
+ *
+ */
+
+
+/**
+ * Base Styles
+ 
+ * 
+ */
+ 
+ *{
+ 	/*overflow:hidden;*/
+ }
+ 
+body {
+    color : #666;
+    font-family: sans-serif;
+	font-size: 90%;	
+	margin: 0px auto;
+    width: 994px;
+	
+}
+img {
+    border : 0;
+}
+a {
+    color: #369;
+    text-decoration:none;
+}
+	a:hover {
+	    color: #78C129;
+	    text-decoration: none;
+	}
+
+/**
+ * @section		Forms
+ */
+.zend_form {
+	clear :both;
+	overflow : auto;
+}
+	.zend_form input,
+	.zend_form textarea,
+	.zend_form select {
+		background : #ededed;
+		border : 1px solid #ddd;
+		color : #777;
+		font-size : 11px;
+		padding : 2px;
+	}
+    .zend_form  #submit,
+    .zend_form  .submit,
+    #submit {
+        background : #fff;
+        border : 1px solid #ddd;
+        color : #8BCA00;
+        cursor : pointer;
+        font-size : 11px;
+        font-weight : bold;
+        text-transform : uppercase;
+    }
+	.zend_form select { 
+		padding : 0
+	}
+	.zend_form textarea {
+		width: 325px;
+	}
+	.zend_form dt {
+        float : left;
+		padding-top : 2px;
+		margin :  0 5px 4px 0;
+		text-align : right;
+		width : 70px;
+	}
+	.zend_form dd {
+		overflow : auto;
+		margin-bottom : 4px;
+		width : 350px;
+	}
+	.required:before {
+	    content: '* ';
+	}	
+	.optional:before {
+	    content: '+ ';
+	}
+
+/**
+ * @section		Header
+ */
+div#topBar {
+    background: #322E47;
+	height : 25px;
+	line-height : 24px;
+    text-align: right;
+}
+	div#topBar a {
+	    color: white;
+	    font-size: 9pt;
+	    margin-right: 8px;
+	    text-decoration: none;
+	    text-transform: capitalize;
+	}
+#header {
+	overflow : auto;
+}
+	#header #titleWrap {
+		height : 63px;
+	    background: url(/images/4m_tile.jpg) 0 1px;
+		position : relative;
+	}
+		#header #titleWrap #headerTitle {
+			position : absolute;
+			top : 9px;
+			left : 15px;
+		}
+		#header #titleWrap #layoutdims {
+			height : 30px;
+			line-height : 30px;
+			position : absolute;
+			right : 0px;
+			text-align:right;
+			top : 13px;
+		}
+			#header #titleWrap #layoutdims li {
+				background : url(/images/4m-nav-bg.gif) right no-repeat;
+			    float:left;
+				padding : 0 20px 0 20px;
+			}		
+			#header #titleWrap #layoutdims li.services {
+				background-position : left;	
+			}
+			#header #titleWrap #layoutdims li.presents {
+				background : none;
+			}
+			#header #titleWrap #layoutdims li.search{
+				background : url(/images/4m-nav-search.gif) 15px 6px no-repeat;
+				padding-left : 33px;
+			}
+				#header #titleWrap #layoutdims li.search a{
+					color : #000;
+				}
+				#header #titleWrap #layoutdims li a{
+					color : #8bca00;
+					text-decoration : none;
+				}
+				#header #titleWrap #layoutdims li a:hover{
+					color : #3a3a52;
+				}	
+				#header #titleWrap #layoutdims #siwrap{
+					float:right;
+				}				
+					#header #titleWrap #layoutdims #siwrap div{
+						padding-left:5px;
+						float:left;
+					}				
+				#header #titleWrap #layoutdims input{
+					height:15px;
+				}
+ #titleBanner {      
+      margin : 7px 0 0px;
+      max-height : 120px;
+      text-align : center;
+      overflow : hidden;
+  }
+
+/**
+ * @section		Header
+ * @subsection	SubHeader
+ */		
+#subheader {
+	padding : 0 4px 0 3px;
+	position : relative;
+	overflow : auto;
+	top : -3px;
+	
+}
+	#subheader object,
+	#subheader embed {		
+		height : 126px;
+		margin : 0;
+		padding : 0;
+	}
+	#subheader .holder,
+	#subheader .orgLinks {
+		border-bottom : 1px solid #bfbfbf;
+		padding-bottom : 4px;
+		height : 126px;
+		overflow : hidden;
+	} 
+	#subheader .holder {
+		float : left;
+		width : 755px
+	}
+		#subheader .holder embed,
+		#subheader .holder object {
+			position:absolute;
+			z-index:1;
+		}
+	#subheader .orgLinks {
+		float : right;
+		width : 205px;
+	}
+		#subheader .orgLinks a {
+			display : block;
+		}
+
+/**
+ * @section		Footer
+ */
+div.footerFineprint {	
+    background : url(/images/footer_bgd.gif) #6C6B71 repeat-x;
+    clear: both;
+	color: #fff;	
+    font-size: 10px;
+	padding : 5px 0 1px;
+	text-align: center;
+}
+	div.footerFineprint a {
+	    color: #fff;
+		margin-left : 10px;
+		text-decoration : none;
+	}
+		div.footerFineprint a:hover {
+			text-decoration : underline;
+		}
+	div.footerFineprint div {
+    	clear: both;
+		margin-bottom : 4px;
+	}
+
+/**
+ * @section		Modules
+ * @subsection	Horoscope
+ */
+div.horoscope,
+div#spotlight {
+    /*background: url(/images/bgds/meet_the_org_bgd_bottom.gif) bottom repeat-x;*/
+    border: 1px solid #bdbdbd;
+    font-size: 8pt;
+	margin-bottom : 6px;
+    padding : 5px;
+	overflow : hidden;
+}
+	div.horoscope .inner,
+	div#spotlight .inner {
+	    background: url(/images/bgds/meet_the_org_bgd.gif) top repeat-x;
+        border : 1px solid #cdcdcd;
+		padding : 6px;
+	}
+		div#spotlight .inner h4,
+		div.horoscope .inner h4 {
+		    text-transform: uppercase;	
+		    color: #ff6171;
+		    font-size: 10pt;
+			margin-bottom : 10px;
+		}
+		.inner div.spotlightWrapper {
+			clear : both;
+		    padding-bottom: 5px;
+		}
+			.inner div.spotlightWrapper img {
+			    padding: 0px;
+			    margin: .2em 5px 1px 0px;
+			    height: 60px;
+			    width: 60px;
+			    float: left;
+			    border: 0px;
+			}
+			.inner div.spotlightWrapper div.smallHead {
+			    margin-top: .4em;
+			    margin-bottom: .2em;
+			    font-size: 10pt;
+			    font-weight: bold;
+			    color: #7cd9f8;
+			}
+			.inner div.spotlightWrapper div.desc {
+			    font-size: 8pt;
+			    line-height: 8pt;
+			    color: #545454;
+			}
+	div.horoscope a {
+	    font-size: 10pt;
+	    color: white;
+	}
+	div.horoscope div.signs {
+	    width: 180px;
+	    margin: 0px auto;
+	    padding-bottom: 5px;
+	}
+
+/**
+ * @section		Modules
+ * @subsection	Meet the organization
+ */
+div#featuredorg {
+    /*background: url(/images/bgds/meet_the_org_bgd_bottom.gif) bottom repeat-x;*/
+    border: 1px solid #bdbdbd;
+    font-size: 8pt;
+    min-height: 168px;
+	margin-bottom : 6px;
+	padding : 5px;
+}
+	div#featuredorg .inner {
+	    background: url(/images/bgds/meet_the_org_bgd.gif) top repeat-x;
+        border : 1px solid #cdcdcd;
+		padding : 6px;
+	}
+	div#featuredorg h4 {
+	    color: #ff6171;
+	    font-size: 10pt;
+		margin-bottom : 10px;
+	}
+	div#featuredorg div {
+		color : #7a7a7a;
+	}
+		div#featuredorg div.smallHead {
+		    font-size: 10pt;
+		    font-weight: bold;
+			margin-bottom : 12px;
+		    text-transform: capitalize;
+		    overflow:hidden;
+		}
+	div#featuredorg img {
+	    float: left;
+	    height: 80px;
+	    margin: 0px 8px 1px 0px;
+	    padding: 0px;
+	    width: 80px;
+	}
+
+	div.orgdata a {
+	    color: white;
+	}
+
+/**
+ * @section		Modules
+ * @subsection	Weather Widget
+ */
+div#weatherWidget {
+    /*background: url(/images/bgds/meet_the_org_bgd_bottom.gif) bottom repeat-x;*/    
+    border: 1px solid #bdbdbd;
+	margin-bottom : 6px;
+    padding : 5px;
+}
+	div#weatherWidget div.inner {
+    	/*background: url(/images/topShadeRSSBgs.gif) repeat-x;*/
+        padding : 2px 0;
+	}
+		div#weatherWidget div#wx_module_9328 {
+		    margin: 0px auto;
+		    width: 180px;
+		}
+
+/**
+ * @section		Modules
+ * @subsection	RSS FEED
+ */
+div.rodrss {
+    /*background: url(/images/bgds/rodbgd_bottom.gif) #fff bottom repeat-x;*/
+	border: 1px solid #bdbdbd;
+    clear: both;
+    padding : 5px;
+	margin-bottom : 6px;
+    min-height: 50px;
+    position: relative;
+    overflow : auto;
+}
+	div.rodrss div.inner {
+	    background: url(/images/bgds/rodbgd.gif) top repeat-x;
+        border : 1px solid #cdcdcd;
+        padding : 6px;
+        overflow : auto;
+	}
+		div.rodrss div.inner img {
+		    width: 50px;
+		    float: left;
+		    margin: 0 0 .2em .1em;
+		}
+		div.rodrss div.inner h3 {
+		    margin-top: 0px;
+		    margin-bottom: 2px;
+		    font-size: 11px;
+		    width: 120px;
+		    float: right;
+		    color: #ff6669
+		}
+		div.rodrss div.inner div.rodtitle {
+		    width: 120px;
+		    float: right;
+		    font-size: 8pt;
+		    color: #545454;
+		}
+
+/**
+ * @section         1 Column
+ * @subsection Search
+ */
+.savior {    
+}
+    .savior #search {
+        font-size : 12px;
+    }
+        .savior #search  h5 {
+            color: #fff;
+            float: left;
+            font-size: 12px;
+            font-weight: bold;
+            padding-left : 20px;
+            text-transform: uppercase;
+            width: 110px;
+        }
+            .savior #search  h5 span {
+                font-size : 11px;
+                font-weight: normal;
+            }
+            .savior #search  h5 span.lwr {
+                text-transform: lowercase;
+            }
+            .savior #search.searchOrgs  h5 span.lwr {
+                text-transform: uppercase;
+            }
+        .savior #search #searchTownsImgs {
+            background: url(/images/search/bgd.gif);
+            color : #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            overflow : auto;
+            padding-bottom : 20px;
+        }
+       .savior #search.searchOrgs #searchTownsImgs {
+            background-image: url(/images/search/org/searchOrgsBgd.gif);
+        }
+            .savior #search #searchTownsImgs .townName.first {
+                margin-left : 74px;
+            }
+            .savior #search #searchTownsImgs .townName {
+                float: left;
+                font-size : 12px;
+                padding-left : 40px;
+                position : relative;
+                width: 103px;
+            }
+                .savior #search #searchTownsImgs .townName input {
+                    left : 22px;
+                   position : absolute;
+                   top : 2px;
+                }
+        .savior #search #towns,
+        .savior #search #zip {
+            background : #74BF1E;
+            padding-bottom : 20px;
+            overflow : auto;
+        }
+            .savior #search #towns #searchTowns,
+            .savior #search #zip #searchZip {
+                display : block;
+                width : 800px;
+                float : left;
+            }
+                .savior #search #towns #searchTowns span {
+                    display: block;
+                    color: #fff;
+                    float: left;
+                    margin : 0 25px 10px 0;
+                    padding-left : 19px;
+                    position : relative;
+                    text-transform: uppercase;
+                }
+                    .savior #search #towns #searchTowns span input {
+                        left : 1px;
+                        position : absolute;
+                        top : 0;
+					margin-left : 2px;
+                    }
+                .savior #search #zip #searchZip input {
+                    width: 50px;
+                }
+        .savior #search.searchOrgs #towns,
+        .savior #search.searchOrgs #zip {
+            background : #23C4F2;
+        }
+        .savior #search #categories,
+        .savior #search #keywords {
+            background-color: #41435c;
+            border-top: 2px solid white;
+            padding-top : 26px;
+            overflow : auto;
+        }
+            .savior #search #categories #searchCats,
+            .savior #search #categories #searchKey {
+                display: block;
+                float: left;
+                padding-bottom : 26px;
+                width: 800px;
+            }
+                .savior #search #categories #searchCats span {
+                    display: block;
+                    color: #fff;
+                    float: left;
+                    margin : 0 25px 10px 0;
+                    padding-left : 19px;
+                    position : relative;
+                    text-transform: uppercase;
+                }
+	                .savior #search #categories #searchCats ul {
+	                	background : #fff;
+						display : none;
+	                    position : absolute;
+						left : 50%;
+						top : 0;
+						z-index : 1000;
+					}
+                     .savior #search  #categories #searchCats span input {
+                        left : 1px;
+                        position : absolute;
+                        top : 1px;
+                    }
+                    .savior #search  #categories #searchCats div.subcats input {
+                        left : auto;
+                        position : relative;
+                        top : auto;
+                    }
+                    
+                     .savior #search  #categories #searchCats div.subcats label {
+                        padding-left:5px;
+                    }
+        .savior #search #keywords {
+            background: url(/images/search/step2_bg.gif) #41435C  left bottom no-repeat;
+            padding-bottom : 20px;            
+        }
+            .savior #search #keywords #searchKey{                
+            }
+                .savior #search #keywords #searchKey input{
+                      width: 400px;
+                }
+                .savior #search #keywords #searchKey div{                      
+                    color: #fff;
+                    font-size: 10px;
+                    padding-top: 5px;
+                    margin-left : 132px;
+                }
+        .savior #search #searchSubmit {
+            background: url(/images/search/search_bg.gif);
+            border-top : 3px solid #fff; 
+            height : 49px;
+			position : relative;
+            text-align: center;
+        }
+            .savior #search #searchSubmit .submit{
+                background: url(/images/search/search.gif);
+                border : 0;
+                cursor : pointer;
+				font-size : 0;
+                height : 40px;
+				line-height : 0px;
+                margin-top : 3px;
+				position : absolute;
+				left : 420px;
+                text-indent : -999px;
+				top : 0;
+                width : 125px;
+            }
+        .savior #search #searchResults {            
+           margin-top : 6px;
+            overflow : auto;           
+        }
+            .savior #search #searchResults #colorbox_gmap {
+                display : none;
+                height : 700px;
+                width : 500px;
+            }
+                #colorbox_gmap #gmap form {
+                    clear : both;
+                    margin-bottom : 5px;
+                }
+                    #colorbox_gmap #gmap input{
+                        float : left;
+                        border : 1px solid #aaa;
+                        width : 560px;
+                    }
+                    #colorbox_gmap #gmap label{
+                        float : left;
+                        margin-right : 4px;
+                    }
+                    #colorbox_gmap #gmap #submit{
+                        float : right;
+                        padding : 1px;
+                        width : auto;
+                    }
+                #colorbox_gmap #gmap #map_canvas {
+                    border : 1px solid #aaa;
+                    height : 400px;
+                    width : 748px;
+                }
+                #colorbox_gmap #gmap.split #map_canvas {
+                    float : left;                    
+                    width : 448px;
+                }
+            #colorbox_gmap #gmap #directionsPanel{
+                display : none;
+                font-size : 11px;
+                height : 400px;
+                margin : 0 0 0 5px;    
+                overflow : auto;
+            }
+            #colorbox_gmap #gmap.split #directionsPanel{
+                display : block;
+                float : right;
+                width : 295px;
+            }
+                #colorbox_gmap #directionsPanel table{
+                    width : 100%;
+                }
+                #colorbox_gmap #directionsPanel .adp-placemark{
+                    margin : 0;
+                }
+            .savior #search #searchResults  h2 {
+                background : #ededed;
+                color: #525252;
+                font-size : 13px;
+                font-weight : normal;
+                height : 24px;
+                line-height : 26px;
+                padding : 0 10px;
+                margin: 0 0 10px;
+            }
+                .savior #search #searchResults  h2 .pages {
+                    float : right;
+                }
+                    .savior #search #searchResults  h2 .pages a {
+                        color : #78C129;
+						display : none;
+						margin-right : 5px;
+						text-decoration : none;
+                    }
+                    .savior #search #searchResults  h2 .pages a.active {
+                        display : inline;
+                    }
+                    .savior #search #searchResults  h2 .pages a.sepa {
+                        border-right : 2px solid #ccc;
+						padding-right : 9px;
+						margin-right : 9px;
+                    }
+                    .savior #search #searchResults  h2 .pages a.sepb {
+                        border-left : 2px solid #ccc;
+						padding-left : 9px;
+						margin-left : 5px
+                    }
+                    .savior #search #searchResults  h2 .pages a:hover {
+                    	text-decoration : underline;
+                    }
+            .savior #search #searchResults .results {
+                border-top: 1px solid #bfbfbf;
+                margin-bottom : 30px;
+            }
+                .savior #search #searchResults .results .searchListing {
+                    border-top: 5px solid #ededed;
+                    border-bottom : 1px solid #bfbfbf;
+                    clear : both;
+                    min-height: 80px;                    
+                    padding : 15px;
+                    margin-top: 4px;
+                    overflow : auto;
+                }
+                .savior #search #searchResults .results .searchListing .searchInfoImg{
+                    float : left;
+                    min-height : 80px;
+                    margin-right : 15px;
+                    width : 80px;
+                }
+                .savior #search #searchResults .results .searchListing .searchInfoAddress{
+                    border-right: 1px solid #bfbfbf;
+                    float : left;
+                    min-height : 80px;
+                    padding-right : 15px;
+                    margin-right : 15px;
+                    width : 180px;
+                }
+                    .savior #search #searchResults .results .searchListing .searchInfoAddress h4 {
+                        color : #78C129;
+                        font-size : 14px;
+                    }
+                    .savior #search #searchResults .results .searchListing .searchInfoAddress .phone {
+                        font-weight : bold;
+                    }
+                .savior #search #searchResults .results .searchListing .searchInfoProfile{
+                    border-right: 1px solid #bfbfbf;
+                    float : left;                    
+                    height : 80px;
+                    padding-right : 15px;
+                    margin-right : 15px;
+                    width : 260px;
+                }
+                    .savior #search #searchResults .results .searchListing .searchInfoProfile a{
+                        color : #78C129;
+                        text-decoration : none;
+                    }
+                .savior #search #searchResults .results .searchListing .searchInfoMap{
+                    float : left;
+                    height : 80px;
+                    width : 80px;
+                }
+        .savior #search #searchResults .searchFooter {
+            background : #72b721;
+            clear : both;
+            padding : 10px 15px;
+            margin : 20px 0 10px;
+        }
+            .savior #search #searchResults .searchFooter a {
+                color : #fff;
+                text-decoration : none;
+                text-transform : uppercase;
+            }
+            
+           div.subcats {
+           		background:white;
+           		color:black;
+           }     
+
+/**
+ * @section			2 Columns 
+ * @subsection		Crumb Nav
+ */
+.crusade #crumbWrap {
+    color: white;
+    background: #8CC901;
+	font-size : 12px;
+	height : 20px;
+}
+.crusade#sports #crumbWrap,
+.crusade#orgs #crumbWrap {
+    background : #0678bf;
+}
+
+/**
+ * @section			2 Columns
+ * @subsection		SubNav / Subfooter
+ */
+ .crusade .subnav {
+ 	background:#271f37;
+ 	height:25px;
+}
+.crusade .subfooter {
+	background:#8bca00;
+    clear : both;
+    color : #fff;
+	height:22px;
+    line-height : 22px;
+}
+.crusade#sports .subfooter,
+.crusade#orgs .subfooter {
+    background:#0678bf;
+}
+
+/**
+ * @section			2 Columns
+ * @subsection		bzHeader
+ */
+ .crusade .bzHeader {
+ 	padding : 8px 14px;
+ 	max-height:172px;
+ 	overflow:hidden;
+}
+
+/**
+ * @section			2 Columns
+ * @subsection		Column Left
+ * @pages               Orgs & Merchant
+ */
+.crusade .col2 {
+	
+}
+	.crusade .col2 div.orgdata {
+        border: 1px solid #ababab;
+	   /* background: url(/images/bgds/orgInfoGradientBgd.gif) #b9bbbd repeat-x ;*/
+	    background: url(/images/bgds/sportsInfoGradientBgd.gif) #7e7d82 repeat-x ;
+	    color: white;
+	    font-size: 8pt;
+		padding : 11px 11px 12px;
+        margin-bottom : 6px;
+	}
+       
+        .crusade .col2 div.orgdata div.address,
+        .crusade .col2 div.orgdata div.info {
+            border-bottom : 1px solid #ccc;
+            padding-bottom : 5px;
+            margin-bottom : 5px;
+        }
+        .crusade .col2 div.orgdata h1 {
+            font-size: 14px;
+        }
+        .crusade .col2 div.orgdata label {
+           float : left;
+           font-weight : bold;
+           width : 50px;
+        }
+    .crusade#sports .col2 div.orgdata {        
+        background: url(/images/bgds/sportsInfoGradientBgd.gif) #7e7d82 repeat-x ;
+    }
+		
+/**
+ * @section			2 Columns
+ * @subsection		Column Middle 
+ * @subsection           Orgs & Merchant & Sports
+ */
+.crusade .col1 {
+	
+}
+	.crusade .col1 #tabGroup {
+		clear : both;
+	    color: #545454;
+	    font-size: 9px;
+		overflow : auto;
+	}
+	.crusade .col1 #tabGroup .tab {
+		background: url(/images/tabs/tab_sprite.gif) #73be1e  right -25px  no-repeat;
+        border-bottom : 1px solid #65aa17;
+		float : left;
+		height : 22px;
+	    text-align: center;
+		margin-right : 1px;		
+	}
+	
+	#videoToggleWrapper .tab, #mediatabs .tab {
+		background: url(/images/tabs/tab_sprite.gif) #73be1e  right -25px  no-repeat;
+		height : 15px;
+	    text-align: center;
+		margin-right : 1px;	
+	}
+	
+	#videoToggleWrapper .tab, #mediatabs .tab2 {
+		background: url(/images/tabs/tab_sprite2.gif) #006699 right -25px  no-repeat;
+		height : 15px;
+	    text-align: center;
+		margin-right : 1px;	
+	}
+	
+		.crusade .col1 #tabGroup #t_coupons.tab,
+		.crusade .col1 #tabGroup #t_b2bcoupons.tab {			
+             background: url(/images/tabs/tab_sprite.gif)  #be311e right -225px  no-repeat;
+			 border-bottom : 1px solid #9C2917;
+		}
+			.crusade .col1 #tabGroup #t_coupons.tab a,
+			.crusade .col1 #tabGroup #t_b2bcoupons.tab a  {			
+	             background: url(/images/tabs/tab_sprite.gif) left -200px  no-repeat;
+			}
+		.crusade .col1 #tabGroup #t_coupons.selected,
+		.crusade .col1 #tabGroup #t_b2bcoupons.selected {             
+            background : url(/images/tabs/tabs_gray_right.gif) right 0 no-repeat;
+            border-bottom : 1px solid #d1d4d5;
+		}
+			.crusade .col1 #tabGroup #t_coupons.selected a,
+			.crusade .col1 #tabGroup #t_b2bcoupons.selected a,
+	        .crusade#sports .col1 #tabGroup #t_b2bcoupons.selected a,
+	        .crusade#sports .col1 #tabGroup #t_b2bcoupons.selected a {
+	            background-position : left -50px;
+				color : #666;
+			}
+			
+    .crusade#sports .col1 #tabGroup .tab {
+        background-color : #000;
+        background-position : right -150px;        
+        border-bottom : 1px solid #000;
+    }
+	.crusade .col1 #tabGroup .tab.selected,
+    .crusade#sports .col1 #tabGroup .tab.selected { 
+            background : url(/images/tabs/tabs_gray_right.gif) right 0 no-repeat;
+            border-bottom : 1px solid #d1d4d5;
+	}
+		.crusade .col1 #tabGroup .tab  a {
+             background: url(/images/tabs/tab_sprite.gif)  left 0  no-repeat;
+			color : #fff;
+			cursor : pointer;
+			display : block;
+			font-weight : bold;
+			height : 22px;
+			line-height : 23px;
+			padding : 0 10px;
+			text-transform : uppercase;			
+		}
+        .crusade#sports .col1 #tabGroup .tab a {
+            background-position : left -175px;
+        }
+		.crusade .col1 #tabGroup .tab.selected a,
+        .crusade#sports .col1 #tabGroup .tab.selected a {
+            background-position : left -50px;
+			color : #666;
+		}
+		
+	.crusade .col1 div#content {
+		background : url(/images/bgds/b2b_content_bg.gif) #edeeef top repeat-x;
+	    clear: both;
+		color : #666;
+        font-size : 12px;
+		padding : 30px 18px;
+		overflow : auto;
+	}
+        .crusade .col1 div#content .tab_content {
+            display : none;
+        }
+            .crusade .col1 div#content .tab_content.selected {
+                display : block;
+            }
+		.crusade .col1 div#content p {
+		    margin : 10px 0;
+		}
+        .crusade .col1 div#content h6 {
+            border : 0;
+            font-size : 18px;
+            height : auto;
+            margin : 0 0 20px;
+            text-transform : uppercase;
+            width : auto;
+        }
+        .crusade .col1 div#content h1 {
+            font-size : 14px;
+        }
+        .crusade .col1 div#content h2 {
+            font-size : 12px;
+        }
+        .crusade .col1 div#content h3 {
+            font-size : 10px;
+        }
+		.crusade .col1 div#content input,
+		.crusade .col1 div#content select,
+		.crusade .col1 div#content textarea {
+			background : #fff;
+		}
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Directions
+ */
+.crusade .col1 div#content #directions #gmap {
+    background : #ddd;
+    border : 1px solid #cdcdcd;
+    color : #888;
+    margin : 0;
+    overflow : hidden;
+}
+    .crusade .col1 div#content #directions #gmap #map_canvas {
+        border-top : 1px solid #aaa;
+        border-width : 1px 0;
+        height : 400px;
+        width : 614px;
+    }
+    .crusade .col1 div#content #directions #gmap .zend_form{
+        padding : 3px 10px;
+        margin : 0;
+        text-transform : uppercase;
+    }
+        .crusade .col1 div#content #directions .zend_form input{
+            border : 1px solid #cdcdcd;
+        }
+        .crusade .col1 div#content #directions .zend_form input.direction_from{
+            margin-right : 6px;
+            width : 420px;
+        }
+        .crusade .col1 div#content #directions #directionsPanel table{
+            color : #333;
+            width : 100%;
+        }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Contact & Forums
+ */
+.crusade .col1 div#content #contact .zend_form,
+.crusade .col1 div#content #forums .zend_form {
+    margin :  0 20px 20px;
+}
+.crusade .col1 div#content #contact .zend_form dt ,
+.crusade .col1 div#content #forum .zend_form dt {
+    margin-right : 8px;
+    width : 125px;
+}
+    .crusade .col1 div#content #contact .zend_form dt label,
+    .crusade .col1 div#content #forum .zend_form dt label {
+        text-transform : lowercase;
+    }
+.crusade .col1 div#content #contact .zend_form dd,
+.crusade .col1 div#content #forum .zend_form dd {
+    float : left;
+    width : 400px;
+}            
+.crusade .col1 div#content #forum  {
+}
+.crusade .col1 div#content #forum  #messages {
+   border-top : 1px solid #ccc;
+   max-height:800px;
+   overflow-x:hidden;
+   overflow-y:scroll;
+}
+.crusade .col1 div#content #forum  #messages .forumWrap {
+  border : 1px solid #cdcdcd;
+  margin : 10px 0;
+}
+    .crusade .col1 div#content #forum  #messages .forumWrap .forumNameDate {
+        color : #888;
+        background : #ddd;
+        border-bottom : 1px solid #cdcdcd;
+        font-weight : bold;
+        padding : 2px 6px;
+        overflow : auto;
+    }
+       .crusade .col1 div#content #forum  #messages .forumWrap .forumNameDate div.date {
+           float : right;
+           text-align : right;
+           width: 280px;
+        }
+       .crusade .col1 div#content #forum  #messages .forumWrap .forumNameDate div.name {
+            float : left;
+            width: 280px;
+        }
+    .crusade .col1 div#content #forum  #messages .forumWrap .forumMessage {
+        padding : 10px;
+        margin : 7px;
+    }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Realestate & Productlist
+ */ 
+.crusade .col1 div#content #products
+.crusade .col1 div#content #realestate {
+}
+    .crusade .col1 div#content #products .product,
+    .crusade .col1 div#content #realestate .estates {
+        background : #fff;
+        border: 1px solid #cdcdcd;
+        margin-bottom : 5px;
+        padding : 7px 10px 7px 7px;
+        position : relative;
+        overflow : auto;
+    }
+    
+    .crusade .col1 div#content #products .product .productimagewrap {
+    	float : left;
+            height : 100px;
+            margin-right : 5px;
+            width : 150px;
+            overflow:hidden;
+            border:1px solid red;
+    }
+    
+        .crusade .col1 div#content #products .product a img,
+        {
+            float : left;
+            height : 100px;
+            margin-right : 5px;
+            width : 150px;
+        }
+      
+        .crusade .col1 div#content #products .product div,
+        .crusade .col1 div#content #realestate .estates div {
+            float : left;
+            width : 420px;
+        }
+        
+        .crusade .col1 div#content #products .product div {
+        	width:510px;
+        }
+        
+         .crusade .col1 div#content #realestate .estates div {
+         	width : 410px;
+         }
+         
+            .crusade .col1 div#content #products .product div span,
+            .crusade .col1 div#content #realestate .estates div span {
+                display : block;
+                font-size : 14px;
+                font-weight :bold;
+            }
+            .crusade .col1 div#content #products .product div img, 
+            .crusade .col1 div#content #realestate .estates div img.redelete{
+                right : 4px;
+                position : absolute;
+                top : 4px;
+            }
+            
+            .crusade .col1 div#content #realestate .estates div img.redelete{
+            	cursor:pointer;
+            }
+            
+              .crusade .col1 div#content #realestate .estates div.reimagewrap { 
+        	  float : left;height: 100px; width: 150px; overflow: hidden; border:1px solid #8CC901;margin-right:5px;
+        }
+           .crusade .col1 div#content #realestate .estates div.reimagewrap img{ 
+        	  max-height: 100px; max-width: 150px;
+        }     
+
+
+        
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Testimonial
+ */
+.crusade .col1 div#content #testimonials .testimonialWrap {
+    border-bottom : 1px solid #cdcdcd;
+    padding-bottom : 7px;
+    margin : 10px 0;
+}
+    .crusade .col1 div#content #testimonials .testimonialWrap .from {
+        color :  #78C129;
+        margin-top : 5px;
+        text-align : right;
+    }
+    
+     .crusade .col1 div#content #testimonials input.sub {
+     	float:right;
+     	margin-right:5em;
+     }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Events
+ */
+.crusade .col1 div#content #calendar h6 {
+    text-align : center;
+}
+      .crusade .col1 div#content #calendar #calendarTabTable{
+          border : 1px solid #cdcdcd;
+          width : 100%;
+      }
+          .crusade .col1 div#content #calendar #calendarTabTable th {
+              color : #888;
+              background : #ddd;
+              font-size  : 12px;
+              font-weight : normal;
+              height : 30px;
+              line-height : 30px;
+              line-height : 20px;
+              text-align : center;
+          }
+          .crusade .col1 div#content #calendar #calendarTabTable td {
+              height : 78px;
+              padding : 2px;            
+              width : 78px;                      
+              vertical-align : top;
+          }
+              .crusade .col1 div#content #calendar #calendarTabTable td.full{
+              }
+                  .crusade .col1 div#content #calendar #calendarTabTable td .events {                              
+                      font-size :10px;
+                  }
+                  .crusade .col1 div#content #calendar #calendarTabTable td .events .event {
+                  		background : #98CD7C ;
+						border : 1px solid #82B369 ;
+						cursor : pointer;
+						padding : 3px;
+						margin : 3px 0;
+                  }
+                  .crusade .col1 div#content #calendar #calendarTabTable td .events .event  a{
+                  		color : #457B28;
+						text-decoration : none;
+                  }
+                  .crusade .col1 div#content #calendar #calendarTabTable td .event .event_details {
+                  	display : none;
+                  }
+                  #cboxLoadedContent .event_details{
+                  }
+                  #cboxLoadedContent .event_name,
+                  div.viewevent_ve .event_name{
+                  	background : #98CD7C;
+					border : 1px solid #82B369;
+                  	color : #457B28;
+                  	font-size : 17px;
+					font-weight : bold;
+					margin-bottom : 14px;
+					padding : 2px 6px;
+					text-transform : uppercase;
+                  } 
+				  #cboxLoadedContent .event_time,
+                  #cboxLoadedContent .event_location,
+				  #cboxLoadedContent .event_description{
+					border-bottom : 1px solid #D3D3D3;
+                  	font-size : 14px;
+					padding : 2px;
+					margin : 4px 10px;
+                  }
+				  #cboxLoadedContent .event_details strong {
+				  	margin-right : 6px;
+                  }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           PhotoGallery
+ */
+.crusade .col1 div#content #media #photogallery {
+}
+    .crusade .col1 div#content #media #photogallery .zend_form{
+        margin : 20px 10px;
+    }
+	    .crusade .col1 div#content #media #photogallery .zend_form div{
+	       margin-bottom : 10px;
+	    }
+	    .crusade .col1 div#content #media #photogallery .zend_form div.photoimage{
+	       display : none;
+	    }
+        .crusade .col1 div#content #media #photogallery .zend_form label{
+            float : left;
+            margin-right : 5px;
+            text-align : right;
+            width : 110px;
+        }
+        .crusade .col1 div#content #media #photogallery .zend_form textarea{
+            height : 75px;
+        }
+        .crusade .col1 div#content #media #photogallery .zend_form .submit{
+            margin : 5px 0 0 375px;
+        }
+    .crusade .col1 div#content #media #photogallery #photogallery_upload {
+    }
+        .crusade .col1 div#content #media #photogallery #photogallery_upload .jcarousel-container {
+            background : #ddd;
+            border : 1px solid #bbb;
+            padding : 8px 20px;
+            position : relative;
+            min-height:90px;
+        }
+        .crusade .col1 div#content #media #photogallery #photogallery_upload .jcarousel-clip {
+            z-index: 2;
+            overflow: hidden;
+            position: relative;
+        }
+        .crusade .col1 div#content #media #photogallery #photogallery_upload .jcarousel-next,
+        .crusade .col1 div#content #media #photogallery #photogallery_upload .jcarousel-prev {
+            background : url(/images/icons/next.png);
+            cursor : pointer;
+            display: none;
+            height : 16px;
+            position : absolute;
+            right : 2px;
+            top : 40%;
+            width : 16px;
+            z-index: 3;
+        }
+        .crusade .col1 div#content #media #photogallery #photogallery_upload .jcarousel-prev {
+            background : url(/images/icons/previous.png);
+            left : 2px;
+        }
+        .crusade .col1 div#content #media #photogallery #photogallery_upload .jcarousel-list {
+            z-index: 1;
+            overflow: hidden;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+            .crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-list li,
+            .crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-item {
+                float: left;
+                list-style: none;
+                height : 62px;
+                width : 62px;
+                margin-right :3px;
+            }
+                .crusade .col1 div#content #media #photogallery #photogallery_upload #photogallery_carousel .jcarousel-item img{
+                    border : 1px solid #bbb;
+                    cursor : pointer;
+                }
+
+                
+
+.crusade .col1 div#content #media #videogallery {
+}
+    .crusade .col1 div#content #media #videogallery .zend_form{
+        margin : 20px 10px;
+    }
+	    .crusade .col1 div#content #media #videogallery .zend_form div{
+	       margin-bottom : 10px;
+	    }
+	    .crusade .col1 div#content #media #videogallery .zend_form div.videoimage{
+	       display : none;
+	    }
+        .crusade .col1 div#content #media #videogallery .zend_form label{
+            float : left;
+            margin-right : 5px;
+            text-align : right;
+            width : 110px;
+        }
+        .crusade .col1 div#content #media #videogallery .zend_form textarea{
+            height : 75px;
+        }
+        .crusade .col1 div#content #media #videogallery .zend_form .submit{
+            margin : 5px 0 0 375px;
+        }
+    .crusade .col1 div#content #media #videogallery #videogallery_upload {
+    }
+        .crusade .col1 div#content #media #videogallery #videogallery_upload .jcarousel-container {
+            background : #ddd;
+            border : 1px solid #bbb;
+            padding : 8px 20px;
+            position : relative;
+            min-height:90px;
+        }
+        .crusade .col1 div#content #media #videogallery #videogallery_upload .jcarousel-clip {
+            z-index: 2;
+            overflow: hidden;
+            position: relative;
+        }
+        .crusade .col1 div#content #media #videogallery #videogallery_upload .jcarousel-next,
+        .crusade .col1 div#content #media #videogallery #videogallery_upload .jcarousel-prev {
+            background : url(/images/icons/next.png);
+            cursor : pointer;
+            display: none;
+            height : 16px;
+            position : absolute;
+            right : 2px;
+            top : 40%;
+            width : 16px;
+            z-index: 3;
+        }
+        .crusade .col1 div#content #media #videogallery #videogallery_upload .jcarousel-prev {
+            background : url(/images/icons/previous.png);
+            left : 2px;
+        }
+        .crusade .col1 div#content #media #videogallery #videogallery_upload .jcarousel-list {
+            z-index: 1;
+            overflow: hidden;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+            .crusade .col1 div#content #media #videogallery #videogallery_upload #videogallery_carousel .jcarousel-list li,
+            .crusade .col1 div#content #media #videogallery #videogallery_upload #videogallery_carousel .jcarousel-item {
+                float: left;
+                list-style: none;
+                height : 62px;
+                width : 62px;
+                margin-right :3px;
+            }
+                .crusade .col1 div#content #media #videogallery #videogallery_upload #videogallery_carousel .jcarousel-item img{
+                    border : 1px solid #bbb;
+                    cursor : pointer;
+                }
+
+
+
+
+
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ */
+.crusade .col1 div#content #admin {            
+}
+
+    .crusade .col1 div#content #admin .utils {
+        margin : 6px 0;
+        text-align : right;
+    }
+        .crusade .col1 div#content #admin .utils img{
+            cursor : pointer;
+           margin-left : 7px;
+        }
+    .crusade .col1 div#content #admin .toggle {
+        background : url(/images/icons/open.png) 99% 3px no-repeat #ddd;
+        border : 1px solid #bbb;
+        clear : both;
+        color : #888;
+        cursor : pointer;
+        font-weight : bold;
+        padding : 4px;
+        margin-top : 5px;
+        position:relative;
+    }
+    
+    .crusade .col1 div#content #admin .toggle a{
+    	position:absolute;
+    	right:25px;
+    }
+    
+        .crusade .col1 div#content #admin .toggle.close {
+            background : url(/images/icons/close.png) 99% 4px no-repeat #ddd;
+        }
+    .crusade .col1 div#content #admin .module {
+       background : none;
+       border : 1px solid #cdcdcd;
+       display : none;
+       overflow : auto;
+       padding : 15px;
+       margin : 10px;
+       overflow : auto;
+    }            
+        .crusade .col1 div#content #admin .module form div {
+           margin-bottom : 4px;
+        }
+        .crusade .col1 div#content #admin .module form label {
+           float : left;
+           margin-right : 8px;
+           text-align: right;
+           text-transform : lowercase;
+           width : 120px;
+        }
+        .crusade .col1 div#content #admin .module form input,
+		  .crusade .col1 div#content #admin .module form textarea {
+           width : 230px;
+        }
+        .crusade .col1 div#content #admin .module .submit {
+            float : right;
+           width : auto;
+        }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          Common
+ */
+.crusade .col1 div#content #admin #commonFeatures.module .subgroup {
+    width: 172px;
+    float: left;
+    margin-left: 12px;
+}
+    .crusade .col1 div#content #admin #commonFeatures.module .subgroup h3 {
+        border-bottom: 1px solid #cdcdcd;
+        font-size : 12px;
+        padding-left : 20px;
+        margin : 10px 0;
+        text-transform : uppercase;
+    }
+    .crusade .col1 div#content #admin #commonFeatures.module .subgroup .featureWrap {
+        clear: both;
+        padding-left: 30px;
+        padding-bottom:3px;
+        position : relative;
+    }
+        .crusade .col1 div#content #admin #commonFeatures.module .subgroup .featureWrap input {
+            left : 12px;
+            position : absolute;
+            top : -1px;
+        }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          Profile
+ */
+.crusade .col1 div#content #admin #profileAdmin.module {
+  margin:0px;
+}
+    .crusade .col1 div#content #admin #profileAdmin.module .submit{                    
+        background : #fff;
+        border : 1px solid #ddd;
+        color : #8BCA00;
+        cursor : pointer;
+        font-size : 11px;
+        font-weight : bold;
+        margin : 15px 0 5px;
+        padding : 2px;
+        text-transform : uppercase;
+    }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          manage Testimonials
+ */
+.crusade .col1 div#content #admin #manageTestimonials.module {
+    
+}
+    .crusade .col1 div#content #admin #manageTestimonials.module h3 {
+        border-bottom: 1px solid #cdcdcd;
+        font-size : 12px;
+        padding-left : 15px;
+        margin : 0 0 15px;
+        text-transform : uppercase;
+    }
+    .crusade .col1 div#content #admin #manageTestimonials.module .submit {
+        margin : 15px 0 5px;
+    }
+    .crusade .col1 div#content #admin #manageTestimonials.module .questions {
+        margin-bottom : 20px;
+        overflow : auto;
+        padding : 0 100px 0 20px;
+        position : relative;
+    }
+        .crusade .col1 div#content #admin #manageTestimonials.module .questions .question span{
+           left : 2px;
+           position :absolute;
+           top : 2px;
+           font-size:12pt;
+        }
+        .crusade .col1 div#content #admin #manageTestimonials.module .questions .question a{
+           color : #666;
+           
+           font-weight : bold;
+        }
+    .crusade .col1 div#content #admin #manageTestimonials.module .questions .edit,
+    .crusade .col1 div#content #admin #manageTestimonials.module .questions .delete{
+        color : #8BCA00;
+       
+        text-decoration : none;
+        right : 10px;
+        top : 2px;
+    }
+    .crusade .col1 div#content #admin #manageTestimonials.module .questions .delete{
+        right : 50px;
+    }
+    .crusade .col1 div#content #admin #manageTestimonials.module .questions .answer{
+        margin-top : 8px;
+    }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          create Coupons
+ */ 
+.crusade .col1 div#content #admin #createCoupons.module{
+}
+    .crusade .col1 div#content #admin #createCoupons.module textarea {
+        width : 230px;
+    }
+    .crusade .col1 div#content #admin #createCoupons.module #coupons {   
+        background : #fff;
+		border: 1px solid #cdcdcd;		
+		margin-bottom : 10px;
+		overflow : auto;
+    }
+        .crusade .col1 div#content #admin #createCoupons.module #coupons .coupon {
+            float : left;   
+            overflow : auto;
+            padding-left : 20px;
+            position : relative;
+            margin : 10px;
+            width : 230px;
+        }
+            .crusade .col1 div#content #admin #createCoupons.module #coupons .coupon input{
+                left : 2px;
+                position : absolute;
+                top : 50%;
+            }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          manage Coupons & manage Banners
+ */
+.crusade .col1 div#content #admin #manageCoupons.module{
+}
+    .crusade .col1 div#content #admin #manageCoupons.module table,
+    .crusade .col1 div#content #admin #manageBanners.module table{
+        border : 1px solid #ccc;
+    }
+        .crusade .col1 div#content #admin #manageCoupons.module table th,
+        .crusade .col1 div#content #admin #manageBanners.module table th{
+            background : #C8E098;
+            font-size : 12px;
+            padding : 2px 3px;
+            text-transform : uppercase;
+        }
+        .crusade .col1 div#content #admin #manageCoupons.module table td,
+        .crusade .col1 div#content #admin #manageBanners.module table td{
+            padding : 2px 3px;
+        }
+        .crusade .col1 div#content #admin #manageBanners.module table tr.odd,
+        .crusade .col1 div#content #admin #manageCoupons.module table tr.odd{
+            background : #DEE4DB;
+        }
+		.crusade .col1 div#content #admin #manageBanners.module table tr.new,
+        .crusade .col1 div#content #admin #manageCoupons.module table tr.new{
+            background : #D6D6EB;
+        }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          create Banners
+ */
+.crusade .col1 div#content #admin #createBanners.module{
+}
+    .crusade .col1 div#content #admin #createBanners.module #bannerTemplates{
+        height : 100px;
+        margin-bottom : 30px;                    
+    }
+        .crusade .col1 div#content #admin #createBanners.module .bannerTemplateOption{
+            float : left;
+            margin-right : 10px;
+            padding-bottom : 20px;
+            position : relative;
+        }
+            .crusade .col1 div#content #admin #createBanners.module .bannerTemplateOption input{
+                bottom : 0;
+                position : absolute;
+                left : 45%;
+            }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          calendar
+ */
+.crusade .col1 div#content #admin #calendarAdmin.module{
+}
+    .crusade .col1 div#content #admin #calendarAdmin.module .datepicker{
+        position : relative;
+    }
+        .crusade .col1 div#content #admin #calendarAdmin.module .datepicker img{
+            cursor : pointer;
+            position : absolute;
+            margin-left : 6px;
+            top : 0;
+        }
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          update top banner
+ */
+.crusade .col1 div#content #admin #updateTopBanners.module label {	 
+	 float : none;
+	 width : 200px;
+}
+.crusade .col1 div#content #admin #updateTopBanners.module  input {
+	
+	margin-right : 10px;
+	 width : 15px;
+}
+.crusade .col1 div#content #admin #updateTopBanners.module  input.submit {
+	float : right;
+	margin-top : 50px;
+}
+ .crusade .col1 div#content #admin #updateTopBanners.module  h3 {
+    border-bottom: 1px solid #cdcdcd;
+    font-size : 12px;
+    padding-left : 2px;
+    margin : 10px 0;
+    text-transform : uppercase;
+}
+ .crusade .col1 div#content #admin #updateTopBanners.module  i {
+    font-size : 9px;
+}
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @module          realestatelist Admin & productlist Admin
+ */
+.crusade .col1 div#content #admin #realestatelistAdmin.module h3,
+.crusade .col1 div#content #admin #productlistAdmin.module h3 {
+    border-bottom: 1px solid #cdcdcd;
+    font-size : 12px;
+    height : 18px;
+    padding-left : 5px;
+    margin : 10px 0 25px;
+    text-transform : uppercase;
+}
+    .crusade .col1 div#content #admin #realestatelistAdmin.module textarea,
+    .crusade .col1 div#content #admin #productlistAdmin.module textarea {
+        height : 75px;                        
+        width : 230px;
+    }
+    .crusade .col1 div#content #admin .module .usetab {
+        float : right;
+        font-weight : normal;
+        text-transform : lowercase;
+        position : relative;
+        padding-left : 20px;
+
+    }
+        .crusade .col1 div#content #admin .module .usetab input{
+           position : absolute;
+           right : 124px;
+           top : 0;                       
+        }
+        
+/**
+ * @section         2 Columns
+ * @subsection      Column Middle
+ * @subsection      Orgs & Merchant & Sports
+ * @pages           Admin
+ * @addon           SWF Upload
+ */
+
+.crusade .col1 div#content #admin #realestatelistAdmin.module .zend_form,
+.crusade .col1 div#content #admin #productlistAdmin.module .zend_form,
+.crusade .col1 div#content #admin #createCoupons.module .zend_form,
+.crusade .col1 div#content #admin #createBanners.module .zend_form,
+.crusade .col1 div#content #admin #updateTopBanners.module .zend_form,
+.crusade .col1 div#content #photogallery .zend_form {
+    position : relative;
+}
+.crusade .col1 div#content #videogallery .zend_form {
+    position : relative;
+}
+.crusade .col1 div#content #admin #realestatelistAdmin.module .upload_image,
+.crusade .col1 div#content #admin #productlistAdmin.module .upload_image,
+.crusade .col1 div#content #admin #createCoupons.module .upload_image,
+.crusade .col1 div#content #admin #createBanners.module .upload_image,
+.crusade .col1 div#content #admin #updateTopBanners.module .upload_image,
+.crusade .col1 div#content #photogallery .upload_image {
+    position : absolute;
+    right : 65px;
+    top : 0;
+    width : 60px;
+}
+    .crusade .col1 div#content #admin #realestatelistAdmin.module .upload_image img,
+    .crusade .col1 div#content #admin #productlistAdmin.module .upload_image img,
+    .crusade .col1 div#content #admin #createCoupons.module .upload_image img,
+    .crusade .col1 div#content #admin #createBanners.module .upload_image img,
+    .crusade .col1 div#content #admin #updateTopBanners.module .upload_image img,
+    .crusade .col1 div#content #photogallery  .upload_image img {
+        border : 1px solid #cdcdcd;
+        height : 60px;
+        margin-bottom: 4px;
+        width : 60px;
+    }
+.crusade .col1 div#content #admin #realestatelistAdmin.module .upload_btn,
+.crusade .col1 div#content #admin #productlistAdmin.module .upload_btn,
+.crusade .col1 div#content #admin #createCoupons.module .upload_btn,
+.crusade .col1 div#content #admin #createBanners.module .upload_btn,
+.crusade .col1 div#content #admin #updateTopBanners.module .upload_btn,
+.crusade .col1 div#content #photogallery .upload_btn {
+    font-size :10px;
+    position : absolute;
+    right : 62px;
+    top : 65px;
+}
+.crusade .col1 div#content #videogallery .upload_btn {
+    font-size :10px;
+    position : absolute;
+    right : 62px;
+    top : 65px;
+}
+    .crusade .col1 div#content #admin #realestatelistAdmin.module .upload_btn b,
+    .crusade .col1 div#content #admin #productlistAdmin.module .upload_btn b,
+    .crusade .col1 div#content #admin #createCoupons.module .upload_btn b,
+    .crusade .col1 div#content #admin #createBanners.module .upload_btn b,
+    .crusade .col1 div#content #admin #updateTopBanners.module .upload_btn b,
+    .crusade .col1 div#content #photogallery .upload_btn b {
+        display : block;
+        text-align : center;
+    }
+        .crusade .col1 div#content #videogallery .upload_btn b {
+        display : block;
+        text-align : center;
+    }
+.crusade .col1 div#content #admin #productlistAdmin.module .upload_area,
+.crusade .col1 div#content #admin #realestatelistAdmin.module .upload_area, 
+.crusade .col1 div#content #admin #createCoupons.module .upload_area,
+.crusade .col1 div#content #admin #createBanners.module .upload_area,
+.crusade .col1 div#content #admin #updateTopBanners.module .upload_area,
+.crusade .col1 div#content #photogallery .upload_area {
+    height : 60px;
+    position : absolute;
+    right : 65px;
+    top : 0;
+    width : 60px;
+}
+.crusade .col1 div#content #admin #productlistAdmin.module .upload_preview,
+.crusade .col1 div#content #admin #realestatelistAdmin.module .upload_preview, 
+.crusade .col1 div#content #admin #createCoupons.module .upload_preview,
+.crusade .col1 div#content #admin #createBanners.module .upload_preview,
+.crusade .col1 div#content #admin #updateTopBanners.module .upload_preview,
+.crusade .col1 div#content #photogallery .upload_preview {
+   margin-top : 20px;
+   display : none;
+}
+.crusade .col1 div#content #admin #productlistAdmin.module .upload_preview b,
+.crusade .col1 div#content #admin #realestatelistAdmin.module .upload_preview b, 
+.crusade .col1 div#content #admin #createCoupons.module .upload_preview b,
+.crusade .col1 div#content #admin #createBanners.module .upload_preview b,
+.crusade .col1 div#content #admin #updateTopBanners.module .upload_preview b,
+.crusade .col1 div#content #photogallery .upload_preview b {
+   font-size:9px;
+}
+
+#createBanners.noimage .upload_image, 
+#createBanners.noimage .upload_area,
+#createBanners.noimage .upload_btn {
+	visibility : hidden;
+}, 
+
+
+                
+/**
+ * @section			3 Columns
+ * @subsection		Column Headers
+ */
+.col1 h6,
+.col2 h6,
+.col3 h6 {
+	border : 1px solid #000;
+	font-size : 8px;
+	height : 10px;
+	margin-bottom : 6px;
+}
+.col1 h6 {
+    width: 253px;
+}
+.col1 h6.right {
+    background: #00b3ed;
+    border-color : #3ec6f0;
+    float : right;
+}
+.col1 h6.left{
+    background: #8bca01;
+    border-color : #aad841;
+    float : left;
+}
+.col2 h6 {
+	background : #7a7a7a;
+	border-color : #bcbcbc;
+}
+.col3 h6 {
+    background: #ff6669;
+	border-color : #ff8c8d;
+}
+
+
+/**
+ * @section			3 Columns
+ * @subsection		Column Left
+ */
+.col2{
+	
+}
+	.col2 div#focusOnSponsors {
+	    border: 1px solid #BFBFBF;
+		margin-bottom : 10px;
+		padding : 5px 5px 0 5px;
+	}
+        .col2 div#focusOnSponsors img.fosbanner{
+            border : 1px solid #cdcdcd;
+        }
+            .crusade img.fosbanner {
+                width  : 224px;
+            }
+            .holygrail img.fosbanner {
+                width  : 224px;
+            }
+        .col2 div#focusOnSponsors .sponsors{
+            border : 1px solid #cdcdcd;
+            background : #ededed;
+            padding : 4px;
+            margin : 7px 0;            
+        }
+            .col2 div#focusOnSponsors .sponsors img {
+                width: 216px;
+                height: 40px;
+            }
+            .col2 div#focusOnSponsors .sponsors .copy {
+                color : #545454;
+                font-size : 11px;
+                line-height: 12px;
+            }
+            .col2 div#focusOnSponsors .sponsors h1 {                
+                color: #78C129;
+                font-size: 15px;
+            }
+        .col2 div#focusOnSponsors .sponsors.temp3 {
+            overflow : auto;
+        }
+            .col2 div#focusOnSponsors .sponsors.temp3 h1 {
+            	color:#cc6600
+            }
+            
+            .col2 div#focusOnSponsors .sponsors.temp3 img {
+                float : left;
+                height : 60px;
+                margin: 0 3px 0 0;
+                width : 60px;
+            }
+            
+/**
+ * @section			3 Columns
+ * @subsection		Column Center
+ */
+.col1 {	
+}
+	.col1 div#col1Banner {
+		margin-bottom : 6px;
+		width:514px;
+		overflow:hidden;
+	}
+
+/**
+ * @section			Columns
+ * @subsection		3 Column Center
+ * @subsection		RSS Feed
+ */
+div.rss {
+    float: left;
+    font-size: 11px;
+    border: 1px solid #bfbfbf;
+	margin-bottom : 6px;
+	padding : 5px;
+    width: 240px;
+}
+	div.rss a {
+	    color: #545454;
+        text-decoration : none;
+	}
+	div.rss div {
+	}
+		div.rss div.inner {
+		    border : 1px solid #cdcdcd;
+			height: 335px;/*270px*/
+		}
+		div.rss .item {
+			clear:both;
+			margin-bottom : 10px;
+		}
+			div.rss .item .link {
+				width : 151px;
+				padding-left : 6px;
+			    display: inline-block;
+			}
+			
+			div.rss .item .time {
+				border-right : 1px solid #969696;
+			    color: #7a7a7a;
+			    float: left;
+			    font-size: 8pt;
+				padding-right : 2px;
+				margin-top : 2px;
+			    width: 45px;
+			}
+		div.rss .makeScroll {
+            height: 292px;
+            margin: 5px;
+		    overflow: hidden;
+		}        
+        div.rss .rssContent {
+            padding-right :5px;
+        }
+    div.rss h5 {
+        font-size : 11px;
+    }
+    div.rss h4 {
+        font-size : 12px;
+        margin-bottom : 6px;
+    }
+	div.rss h3 {
+	    font-size: 10pt;
+		height : 30px;
+		line-height : 34px;
+		margin : 0;
+		padding-left : 5px;
+		position : relative;
+	    text-transform: uppercase;
+	}
+		div.rss h3 img {
+			position : absolute;			
+		}
+		 div.rss#sprss h3,
+        div.rss#sprss h4{
+			color: #CF5D12;
+		}
+			div.rss#sprss h3 img {
+				top : 7px;
+				left : 69px;
+			}
+		div.rss#bzrss h3,
+        div.rss#bzrss h4{
+			color : #084efc;
+		}
+			div.rss#bzrss h3 img {
+				top : 6px;
+				left : 72px;
+			}
+		div.rss#enrss h3,
+        div.rss#enrss h4{
+			color: #9a0a01;
+		}
+		div.rss#evrss h3,
+        div.rss#evrss h4{
+			color: #00a9ff;
+		}       
+			div.rss#enrss h3 img {
+				top : 7px;
+				left : 128px;
+			}
+			div.rss#evrss h3 img {
+				top : 7px;
+				left : 68px;
+			}
+            div.rss#evrss h5{
+            	color : #00a9ff;
+				font-size : 12px;
+                padding-top :6px;
+                margin-top : 5px;
+            }
+            div.rss#evrss .calendar_event_rss,
+            div.calendar_event_rss{            	
+                border-bottom : 1px solid #cdcdcd;
+				padding : 5px 0;
+            }
+	            div.rss#evrss .calendar_event_rss .event_view{
+					color : #00a9ff;
+					display : block;
+	            	text-align : right;
+	            }
+	            div.rss#evrss .calendar_event_rss .event_details{
+					display : none;
+	            }
+		
+		div.rss#fnrss h3,
+        div.rss#fnrss h4{
+			color : green;
+		}
+			div.rss#fnrss h3 img {
+				top : 7px;
+				left : 102px;
+			}
+		div.rss#mnrss h3,
+        div.rss#mnrss h4 {
+			color: green;
+		}
+			div.rss#mnrss h3 img {
+				top : 3px;
+				left : 166px;
+			}
+div.rss#mnrss,
+div#fnrss,
+div#enrss {
+	margin-right : 7px;
+}
+div.rss#mnrss div.inner,
+div.rss#enrss div.inner,
+div.rss#evrss div.inner,
+div.rss#sprss div.inner{
+    background: url(/images/topShadeRSSBgs.gif) #fff repeat-x;
+}		
+div.rss#bzrss div.inner,
+div.rss#fnrss div.inner {
+	 background: url(/images/topShadeRSSBgs.gif) #fff repeat-x;
+   /* background: url(/images/bgds/bottomrssbgd.gif) #fff repeat-x bottom; */
+}
+/*div.rss#enrss {
+width: 501px;
+}
+    div.rss#enrss .inner {
+        height : 170px;
+    }
+        div.rss#enrss .inner .makeScroll{
+            height : 130px;
+        }
+            div.rss#enrss .inner .link {
+                width: 421px;
+            }*/
+
+/**
+ * @section		3 Columns
+ * @subsection 	Subpages
+ */
+div.subpage {
+	border:1px solid #BFBFBF;
+	color: #666; 
+	font-family: Helvetica;
+	font-weight: lighter;
+	overflow:hidden;
+}
+	div.subpage h4 {
+	 	background: url(/images/bgds/b2bGradientBgd_x36) top repeat-x;
+		color : #fff;
+		font-size : 13px;
+		font-weight : bold;
+		height : 36px;
+		line-height : 36px;
+		padding-left : 20px;
+	}
+	
+	div.subpage .content {
+		font-size : 11px;
+		padding : 6px 22px 20px;
+	}
+		div.subpage .content img {
+			margin :  0 0 10px 0;
+		}
+		div.subpage .content ol {
+			list-style : decimal;
+			list-style-position : inside;
+			margin : 10px;
+		}       
+    div.subpage #statusMessage {
+        border-bottom : 1px solid #ddd;
+        color: #8bca00;
+        font-size : 12px;
+        font-weight : bold;
+        padding : 12px 0 12px;
+        margin : 0 22px;
+        text-align : center;
+    }
+          div.subpage .content #statusMessage {
+            padding : 7px 0 12px;
+            margin : 0;
+        }
+	
+	div.subpage .zend_form {
+		font-size : 11px;
+		margin : 20px 20px 0 20px;
+	}
+
+/**
+ * @section            3 Columns
+ * @subsection 	Subpages
+ * @subsection	     Site Map
+ */
+div.subpage#sitemap {
+}
+	#sitemap .content {
+		padding : 20px 22px ;
+	}
+		#sitemap .content a {
+			color : #8BCA00;
+			font-size : 12px;
+			font-weight : bold;
+			padding-left : 12px;
+			text-decoration : none;
+		}
+		#sitemap .content .home {
+			color : #3A3B52;
+			padding : 0;
+		}
+/**
+ * @section            3 Columns
+ * @subsection 	Subpages
+ * @subsection	     FAQ
+ */
+div.subpage#publicFAQ {
+	font-size : 9px;
+}	
+	div.subpage#publicFAQ a {
+	    color: #8bca00;
+		display : block;
+	    text-transform: capitalize;
+	    text-decoration: none;
+	}
+		div.subpage#publicFAQ .questions a {
+		    color: #999;
+		}
+		div.subpage#publicFAQ .questions a:hover {
+		    color: #8bca00;
+		}
+	div.subpage#publicFAQ a:hover {
+	    color: #999;
+	    background-color: transparent;
+	    text-decoration: none;
+	}
+	div.subpage#publicFAQ h1 {
+		color: #8bca00;
+		border-bottom: 1px solid #8bca00;
+		margin-bottom : 8px;
+	}
+	div.subpage#publicFAQ .questions div {
+		margin-bottom : 5px;
+	}
+		div.subpage#publicFAQ div.backtotop {
+		    font-size: 8pt;
+			margin-bottom : 20px;
+		    text-align: right;
+		}
+		
+/**
+ * @section		3 Columns
+ * @subsection 	Subpages
+ * @subsection	Feedback
+ */
+div.subpage#feedback {
+	font-size : 9px;
+}
+	div.subpage#feedback form label,
+	div.subpage#feedback form dt {
+		width : 85px;
+	}
+	div.subpage#feedback form input {
+		width : 85px;
+	}
+		div.subpage#feedback form input.sub {
+		    float: right;
+		    width: 75px;
+		}
+	div.subpage#feedback form textarea {
+		height: 75px;
+   		width: 350px;
+	}
+	div.subpage#feedback h1 {
+		border-bottom: 1px solid #8bca00;
+		color: #8bca00;
+		margin-bottom : 8px;
+	}
+	div.subpage#feedback .feedback {
+	   border-bottom: 1px solid #ccc;
+	   margin : 5px;
+	   padding : 5px;
+	}
+	div.subpage#feedback .mail {
+	    color: #8bca00;
+	    float: left;
+	    font-size: 9pt;
+		font-weight : bold;
+   		width: 275px;
+	}
+	div.subpage#feedback .date {
+		color: #8bca00;
+	    float: right;
+	    font-size: 9pt;
+		text-align : right;
+	    width: 110px;
+	}
+	div.subpage#feedback .feedbackCopy {
+		font-size: 9pt;
+		padding: 0 0 5px;
+	}
+
+/**
+ * @section		3 Columns
+ * @subsection 	Subpages
+ * @subsection	privacy
+ */
+div.subpage#privacy {
+	
+}
+	div.subpage#privacy {
+	   
+	}
+
+/**
+ * @section		3 Columns
+ * @subsection 	Subpages
+ * @subsection	Account Info/Login/Password
+ */
+div.subpage#user {
+	position : relative;
+}   
+
+div.subpage#user dl,
+#testimonials dl{
+	overflow:hidden;
+}   
+
+    div.subpage#user dd input {
+        width : 200px;
+    }
+    div.subpage#user input#submit {
+        width : auto;
+    }
+	div.subpage#user .content {
+		padding-bottom : 24px;
+	}
+		div.subpage#user .content a{
+			color : #8BCA00;
+			font-weight : bold;
+			text-decoration : none;
+			
+		}
+			div.subpage#user .content a:hover{
+				text-decoration : underline;
+			}
+			div.subpage#user  .content a.edit,
+			div.subpage#user  .content a.update {
+				display : block;
+				margin:  0 10px 0 10px;
+				text-align : right;
+				text-transform : lowercase;				
+			}
+			div.subpage#user .content a.logout,
+			div.subpage#user .content a.login {
+				color : #fff;
+				position : absolute;
+				top : 11px;
+				right : 10px;
+			}
+		div.subpage#user .content #memberInfo,
+		div.subpage#user .content #passwordInfo,
+		div#sportsUpdatePassword #passwordInfo{
+			border : 1px solid #ddd;
+			border-width : 0 0 1px 0;
+			padding  : 7px  0 4px ;
+			margin-bottom : 8px;
+		}
+			div.subpage#user .content #memberInfo li,
+			div.subpage#user .content #passwordInfo li,
+			div #sportsUpdatePassword #passwordInfo li {
+				clear : both;
+				height : 17px;
+				margin-bottom : 5px;
+			}
+			div.subpage#user .content #memberInfo label,
+			div.subpage#user .content #passwordInfo label,
+			div #sportsUpdatePassword #passwordInfo label {
+				float : left;
+				font-weight : bold;
+				line-height : 16px;
+				margin-right : 8px;
+				text-align : right;
+				width : 100px;
+			}
+			
+			div #sportsUpdatePassword #passwordInfo label{
+				font-weight:normal;
+				width : 120px;
+			}
+			
+			div #sportsUpdatePassword #passwordInfo a {
+				width:50px;
+				background-color:blue;
+				color:white;
+				display:inline-block;
+				border:1px solid white;
+				padding:3px;
+				margin:3px;
+				float:right;
+			}
+			
+			div.subpage#user .content #memberInfo input,
+			div.subpage#user .content #passwordInfo input,
+			div #sportsUpdatePassword #passwordInfo input {
+				background : #ededed;
+				border : 1px solid #ddd;
+				color : #777;
+				font-size : 11px;
+				padding : 2px;
+				width : 200px;
+			}
+			div.subpage#user .content #forgotten {
+				padding : 30px 0 40px;
+				text-align : center;
+			}
+				div.subpage#user .content #forgotten div {
+					margin : 0 20px 10px;
+				}
+				div.subpage#user .content #forgotten input.email {
+					background : #ededed;
+					border : 1px solid #ddd;
+					color : #777;
+					font-size : 11px;
+					padding : 2px;
+					width : 300px;
+				}
+			div.subpage#user .content .memberships {
+				border : 1px solid #ddd;
+				border-width : 1px 1px 0;
+				margin-top : 20px;
+			}
+				div.subpage#user .content .memberships div {
+					border-bottom : 1px solid #ddd;
+					font-size : 13px;
+					padding : 8px 50px 8px 8px;
+					position : relative;
+				}
+					div.subpage#user .content .memberships div a {
+						font-size : 11px;
+						position : absolute;
+						right : 10px;
+						top : 8px;
+					}
+				div.subpage#user .content .memberships div.odd {
+					background : #ededed;
+				}
+	div.subpage#user .retrievePassword {
+		font-size : 10px;
+		margin : 10px;
+	}
+	div.subpage#user form {
+		padding : 6px 22px 20px;
+	}
+    
+/**
+ * @section     Preview
+ * @subsection  Banner
+ */
+
+.preview {
+    width : auto;
+}
+    .preview .banner{
+        border : 1px solid #cdcdcd;
+        background : #ededed;
+        padding : 4px;
+        margin : 15px 25px 0;
+        width : 238px;
+    }
+            .preview .banner img {
+                width: 100%;
+                height: 40px;
+            }
+            .preview .banner .copy {
+                color : #545454;
+                font-size : 11px;
+                line-height: 12px;
+            }
+            .preview .banner h1 {                
+               color :#78C129;
+                font-size: 15px;
+                margin : 0;
+            }
+        .preview .banner.temp3 {
+            overflow : auto;
+        }
+        
+         .preview .banner.temp3 h1{
+             color :#cc6600;
+        }
+            .preview .banner.temp3 img {
+                float : left;
+                height : 60px;
+                margin: 0 3px 0 0;
+                width : 60px;
+            }
+
+/**
+ * 
+ */
+
+
+
+
+/**
+ * @section     Coupons
+ */
+
+#coupons .coupon1,
+#coupons .coupon2,
+#coupons .coupon3,
+#coupons .coupon4 {
+	padding : 10px;
+	position : relative;
+	width : 220px;
+}
+#coupons .clear {
+	clear:both;
+	line-height:1px;
+	margin-bottom : 5px;
+}
+#coupons .coupon1 {
+	background : #fff;	
+	border : 1px dashed #888;
+	color:black;
+	font-weight:bold;
+}
+	#coupons .coupon1 .cpnImg {
+		float:right;
+		width:60px;
+		height:60px;
+		overflow:hidden;
+	}
+		#coupons .coupon1 .cpnImg img {
+			width:60px;
+			height:60px;
+		}
+	#coupons .coupon1 .cpnOffer {
+		color:red;
+		font-size:12pt;
+		font-weight:bold;
+		padding-bottom : 5px;
+		text-transform : uppercase;
+		width:200px;
+	}
+	#coupons div.coupon1 div.cpnSponsor {
+		color:#4349AB;
+		font-size:14px;
+		font-weight:bold;
+		float:left;
+		padding-bottom : 3px;
+		width:137px;
+	}
+	
+	#coupons div.coupon1 div.cpnValid, 
+	#coupons div.coupon2 div.cpnValid {
+		color:black;
+		font-size:14px;
+		font-weight:bold;
+		padding-bottom : 3px;
+	}
+	
+	#coupons div.coupon1 div.cpnValid span,
+	#coupons div.coupon2 div.cpnValid span {
+		color:#79868C;
+	}
+
+
+
+div#coupons .coupon3 {	
+ 	background : #DFE0E2;	
+	border : 2px dashed black;
+	padding : 4px 8px 4px 8px;
+	position : relative;
+	width : 220px;
+	color:black;
+	font-weight:bold;
+}
+
+
+div#coupons div.coupon3 div.cpnImg {
+	float:right;
+	width:60px;
+	height:60px;
+	overflow:hidden;
+}
+
+div#coupons div.coupon3 div.cpnSponsor {
+	font-size:12pt;
+	font-weight:bold;
+	color:black;
+	float:left;
+	width:157px;
+	padding-bottom:.5em;
+	padding-right:3px;
+}
+
+
+div#coupons div.coupon3 div.cpnOffer {
+	font-size:12pt;
+	font-weight:bold;
+	color:red;
+	float:left;
+	width:157px;
+	padding-bottom:.5em;
+	padding-right:3px;
+}
+
+div#coupons div.coupon3 div.cpnCopy {
+	font-size:8pt;
+	clear:both;
+}
+
+
+div#coupons div.coupon2 {
+	width:220px;
+	background:white;
+ 	background-image: url(/media/image/coupon_templates/coupon2gradient.jpg);
+  	background-repeat: repeat-x;
+	border:2px dashed black;
+	padding : 4px 8px 4px 8px;
+	position:relative;
+	color:black;
+	font-weight:bold;
+}
+
+div#coupons div.coupon2 div.cpnImg {
+	float:right;
+	width:60px;
+	height:60px;
+	overflow:hidden;
+}
+
+div#coupons div.coupon2 div.cpnSponsor {
+	font-size:12pt;
+	font-weight:bold;
+	color:black;
+	float:left;
+	width:157px;
+	padding-bottom:.5em;
+	padding-right:3px;
+}
+
+
+div#coupons div.coupon2 div.cpnOffer {
+	font-size:12pt;
+	font-weight:bold;
+	color:red;
+	float:left;
+	width:157px;
+	padding-bottom:.5em;
+	padding-right:3px;
+}
+
+div#coupons div.coupon2 div.cpnCopy {
+	clear:both;
+}
+
+
+div#coupons div.coupon2 div.coupon4monimgwrap {
+	padding:4px;
+	width:218px;
+	background:#3a3b4d;
+	position:relative;
+	bottom:0px;
+}
+
+div#coupons div.coupon4 {
+	width:220px;
+	background:white;
+ 	background-image: url(/media/image/coupon_templates/coupon4bgd.jpg);
+  	background-repeat: repeat-x;
+	border: 1px dashed #888;
+	padding:10px;
+	position:relative;
+	color:black;
+	font-weight:bold;
+}
+
+div#coupons div.coupon4 div.cpnImg {
+	float:right;
+	width:60px;
+	height:60px;
+	overflow:hidden;
+}
+
+div#coupons div.coupon4 div.cpnSponsor {
+	font-size:12pt;
+	font-weight:bold;
+	color:black;
+	float:left;
+	width:137px;
+	padding-right:3px;
+}
+
+
+div#coupons div.coupon4 div.cpnOffer {
+	font-weight:bold;
+	color:#e73932;
+	width:200px;
+	padding-bottom:5px;
+	padding-right:3px;
+	font-size:12pt;
+}
+
+div#coupons div.coupon4 div.cpnCopy {
+	clear:both;
+}
+
+#coupons div.coupon4 div.cpnValid {
+		padding-bottom : 5px;
+	}
+
+
+
+/*********************************8
+ TOP BANNER
+ **********************************/
+div#topBanner {
+    background: red;
+    height: 90px;
+    margin: 2px 5px 2px 5px;
+}
+
+div#topBanner div#topBannerLeft {
+    background: green;
+    height: 90px;
+    width: 690px;
+    display: inline-block;
+    float: left;
+}
+
+div#topBanner div#topBannerRight {
+    background: blue;
+    height: 90px;
+    width: 247px;
+    display: inline-block;
+    float: right;
+}
+
+
+
+
+span#clientlist {
+    font-size: 12pt;
+    color: black;
+}
+
+span#addaclient {
+    color: red;
+}
+
+
+
+.scroll-track {
+    height: 10px;
+    width: 5px;
+    background: #A4A5A9;
+}
+
+.scroll-handle {
+    margin-top: -12px;
+    margin-left: -1px;
+    height: 5px;
+    width: 7px;
+    background-image: url(/images/scrollbars/up.png);
+    background-repeat: no-repeat;
+    background: #8BCA01;
+    cursor: pointer;
+}
+
+
+.savior #search #searchResults h2 .pages a.selected {
+	color:black;
+	text-decoration:underline;
+}
+
+
+.clear {
+	clear:both;
+	line-height:1px;
+}
+
+table#couponlayout {
+	margin:0px auto;
+}
+
+table#couponlayout td {
+	padding:5px;
+}
+
+
+
+
+
+table#sportsusertable td {
+	padding:5px;
+	background:white;
+	border:1px solid #666666;
+}
+
+table#sportsusertable, div.addSportsUserWrapper {
+	width:100%;
+	border:1px solid #0678BF;
+}
+
+div.addSportsUserWrapper {
+	margin-bottom:1em;
+}
+
+div.addSportsUserWrapper h4{
+	background:black;
+	color:white;
+	text-transform:capitalize;
+	padding:3px;
+}
+
+table#sportsusertable th{
+	text-transform:capitalize;
+	padding:3px;
+	text-align:left;
+	background:black;
+	color:white;
+}
+
+#addSportsUser {
+	margin-top:1em;
+}
+
+#addSportsUser div {
+	padding:3px;
+	text-transform:capitalize;
+}
+
+
+.crusade .col1 div#content #admin #addSportsUser input.sub {
+	width:50px;
+	margin-left:23em;
+	background:#0678BF;
+	color:white;
+}
+
+div.calendar_event_popup {
+	min-height:50px;
+	width:200px;
+	text-align:left;
+}
+
+div#sitemap div {
+	padding:5px;
+	padding-left:1em;
+}
+
+div.sportsSigninForm div {
+	margin:.7em;
+}
+
+div.sportsSigninForm label {
+	width:120px;
+	text-align:right;
+	display:inline-block;
+}
+
+
+/**
+ * @section				StatusMessage
+ */
+#statusMessage {
+	background : #B6C881;
+	border : 1px solid #9EB556;
+	color : #83983C;
+	display : none;
+	height : 25px;
+	left : 0;
+	padding : 5px;
+	position : fixed;	
+	text-align : center;
+	bottom : 0;
+	width : 100%;
+	z-index : 100000;
+}
+#statusMessage span {
+	background : url(/images/root/img/attention.png) 0 -3px no-repeat;
+	font-size : 20px;
+	margin : auto;
+	padding-left : 40px;
+	width : auto;
+	
+}
+
+div.helppopupwrap {
+	width:280px;
+	background-color:white;
+	margin:0px auto;
+}
+
+div.helppopup {
+	background-color:white;
+	width:270px;
+	margin:0px auto;
+	font-size:9pt;
+	height:90px;
+	overflow:auto;
+	padding:3px;
+}
+
+#dhtmltooltip{
+position: fixed;
+top:0px;
+left:5;
+width: 300px;
+max-height:450px;
+overflow:auto;
+overflow-x:hidden;
+border: 2px solid black;
+padding: .5em;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+
+div#reviewScroll {
+	max-height:200px;
+	overflow-x: hidden; 
+	overflow-y: scroll;
+	padding:5px;
+}
+
+#reviewsScroll {
+	padding:5px;
+	max-height:800px;
+	overflow-x: hidden; 
+	overflow-y:scroll;
+	}
+}
+
+
+

@@ -1,0 +1,864 @@
+/**
+ * @section         Globals
+ */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img {
+    border: 0;
+}
+ol, ul {
+    list-style: none;
+}
+a {
+    cursor : pointer;
+	color:#FF6F00;
+	text-decoration: none
+}
+a:hover {
+	text-decoration: underline
+}
+body {
+	background : #1C2742;
+	margin:0;
+	padding:0;
+  	color:#000;
+	font-family:tahoma,arial,sans-serif;
+	font-size:11px;
+}
+
+
+/**
+ * @section 			layout
+ */
+
+#main {
+	border : 10px solid #3C91C7;
+	margin : auto;
+	overflow : auto;
+	width:992px;
+}
+#header {
+	background : #3C91C7;
+	position:relative;
+	height:90px;
+	/*background:url(/images/root/img/bg-header.gif) no-repeat left bottom;*/
+}
+#middle {
+	float : left;
+	padding-top : 20px;
+	width:100%;
+	background:url(/images/root/img/bg_top.jpg) #fcffff no-repeat;
+}
+#footer {
+	clear : both;
+	height:20px;
+	width:100%;
+	background:url(/images/root/img/bg_bottom.jpg) bottom #fcffff no-repeat;
+}
+/**
+ *@section				top
+ */
+#header .headline {
+	color : #fff;	
+	font-size : 30px;
+	position : absolute;
+	top : 5px;
+	left : 25px;
+}
+	#header .headline span {
+		color : #8fbd1b;
+	}
+#header .byline {
+	color : #fff;
+	position : absolute;
+	top : 10px;
+	right : 30px;
+	font-size:14px;
+}
+#header #top-navigation {
+	position:absolute;
+	bottom : -3px;
+	left:20px;
+	list-style:none;
+}
+	#header #top-navigation li {
+		float:left;
+		height:30px;
+	}
+		#top-navigation li a {			
+			color:#fff;
+			display:block;
+			float:left;
+			font-size : 14px;
+			margin : 7px 12px 0;
+		}
+		#top-navigation li span {
+			float:left;
+			/*background:url(/images/root/img/tab-left.gif) no-repeat left top;*/
+		}
+		#top-navigation li.active {
+			background:url(/images/root/img/left_topcorner) #ffffff no-repeat left top;
+			border-top : 1px solid #3c91c7;
+		}
+			#top-navigation li.active a{
+				color : #606060;
+				font-weight : bold;
+				height:30px;
+			}
+			#top-navigation li.active span {
+					background:url(/images/root/img/right_topcorner) no-repeat right top;
+					color:#606060;
+					height:30px;
+			}
+/**
+ * @section				middle
+ * @subsection		left-column
+ */
+#middle #left-column {
+	float:left;
+	padding:0 14px 0 12px;
+	width:151px;
+}
+	#middle #left-column a {
+		color:#3E3E3E;
+	}
+	#middle #left-column h3 {
+		font-size:11px;
+		margin:0;
+		color:#fff;
+		background:url(/images/root/img/bg-left-header.jpg) no-repeat left top;
+		height:25px;
+		line-height:23px;
+		padding:0 0 0 9px;
+	}
+	#middle #left-column ul.nav {
+	}
+		#middle #left-column ul.nav li {			
+			background:url(/images/root/img/bg-dotted.gif) repeat-x bottom;
+			height : 25px;
+			line-height : 23px;
+			padding-left : 10px;
+		}		
+			#middle #left-column ul.nav li.last {
+				background:none;
+			}
+			#middle #left-column ul.nav li.selected {
+				background:url(/images/root/img/bg-dotted.gif) #E0EEFB repeat-x bottom;
+			}
+				#middle #left-column li.selected  a{
+					background:url(/images/root/img/arrow.gif) no-repeat 0 4px;
+					color : #ff6f00;
+				}
+		#middle #left-column ul.nav a {
+			padding:0 0 0 12px;
+		}
+/**
+ * @section				middle
+ * @subsection		center-column
+ */
+#middle #center-column {
+	float:left;
+	width:764px;
+	background: #5A9ABE;
+	border : 2px solid #3c91c7;
+	min-height:584px;
+	padding : 15px;
+}	
+* html #center-column {
+	height:584px;
+}
+	#middle #center-column h3 {
+		color : #fff;
+		font-size : 18px;
+		margin : 0 0 10px;	
+	}
+	#middle #center-column input,
+	#middle #center-column select,
+	#middle #center-column textarea {
+		border : 1px solid #CCCCCC;
+		color : #666;
+		font-size : 13px;
+	}
+		#middle #center-column .sub input {
+			border : 1px solid #808F96;
+			color : #808F96;
+			padding : 0 2px;
+		}
+	#middle #center-column form,
+	#middle #center-column #clients,
+	#middle #center-column #users,
+	#middle #center-column #coupons,
+	#middle #center-column #banners,
+	#middle #center-column #faqs {
+		background : #ECE4D1;
+		border : 2px solid #fff;
+		color : #666;
+		margin-bottom : 10px;
+	}		
+	#middle #center-column .details{
+	}
+		#middle #center-column form h4,
+		#middle #center-column #clients h4,
+		#middle #center-column #users h4,
+		#middle #center-column #coupons h4,
+		#middle #center-column #banners h4,
+		#middle #center-column #faqs h4 {
+			background : #B6C881;
+			border-bottom : 1px solid #9EB556;
+			color : #83983C ;
+			font-size : 13px;
+			padding : 4px 4px 4px 8px;
+			margin-bottom : 12px;
+			text-transform : uppercase;
+			letter-spacing : 1px;
+		}
+		#middle #center-column #clients h4 {
+			margin : 0;
+		}
+		#middle #center-column form .mod,
+		#middle #center-column form .zend_form  {
+			border : 1px solid #9EB556;
+		}
+			#middle #center-column form .mod  div,
+			#middle #center-column #clients div{
+				clear : both;
+				margin-bottom : 3px;
+			}
+				#middle #center-column form fieldset {
+					padding-bottom : 10px;
+				}
+					#middle #center-column form div label,
+					#middle #center-column form dt {
+						float : left; 
+						line-height : 17px;
+						margin-right : 6px;
+						text-align : right;
+						width : 125px;
+					}
+					#middle #center-column form dt{
+						clear : left;
+						color : #666666 ;
+						font-weight : bold;
+						height : 18px;
+						line-height : 16px;
+						padding : 5px 4px 0 0;
+						text-transform : uppercase;
+					}
+					
+					#middle #center-column form dd{
+						padding : 5px;
+						overflow : auto;
+					}
+					#middle #center-column form dd error{
+						display : block;
+					}
+			#middle #center-column form .mod .sub {
+				padding : 0 4px 4px 0;
+				margin : 20px 0 0 0 ;
+				text-align : right;	
+			}
+				#middle #center-column form .mod .sub input {
+					cursor : pointer;
+					background : #B5CDDA ;
+					border : 1px solid #63839D;
+					color : #63839D;
+					font-size : 11px;
+					font-weight : bold;
+					padding : 5px 20px;
+					margin-left : 20px; 
+					text-transform : uppercase;
+					width : auto;
+				}
+	/**
+	 * @section				middle
+	 * @subsection		center-column
+	 * @page					homepage
+ 	*/
+	#middle #center-column .quicklinks{
+		border : 2px solid #fff;
+		margin-bottom : 4px;
+	}
+		#middle #center-column .quicklinks a{
+			color : #83983C;
+			background : #B6C881;
+			border-bottom : 1px solid #9EB556;
+			display : block;
+			font-size : 12px;
+			font-weight : bold;
+			padding : 5px;
+			text-transform : uppercase;
+		}
+		
+	/**
+	 * @section				middle
+	 * @subsection		center-column
+	 * @page					organization
+ 	*/
+	#middle #center-column .clientLists{		
+	}
+		#middle #center-column .clientLists .client_nav{
+			margin-bottom : 0px;
+			overflow : auto;
+			margin-left:0px;
+			padding-left:0px;
+		}
+		#middle #center-column .coupon_nav{
+			overflow : auto;
+			margin-bottom : 30px;
+		}
+			#middle #center-column .clientLists .client_nav form,
+			#middle #center-column .clientLists .client_nav form dl,
+			#middle #center-column .coupon_nav form {
+				background : none;
+				border : 0;
+				color : #fff;
+				float : right;
+				padding : 0;
+				margin : 0;
+			}
+			#middle #center-column .clientLists .client_nav form dd{
+				float : left;
+				padding : 0;
+				margin : 0;
+			}
+			#middle #center-column .clientLists .client_nav form dt {
+				display : none;
+			}
+				#middle #center-column .clientLists .client_nav form select,
+				#middle #center-column .coupon_nav form select {
+					background : #B5CDDA;
+					border : 1px solid #63839D;
+					color : #63839D;
+					font-size : 14px;
+				}
+			#middle #center-column .clientLists .client_nav li{
+				color : #63839D;
+				cursor : pointer;
+				background : #B5CDDA;
+				border-bottom : 1px solid #63839D;
+				border-right : 1px solid #63839D;
+				display : block;
+				float : left;
+				font-size : 12px;
+				font-weight : bold;
+				padding : 5px 20px;
+				margin-right : 2px;
+				text-transform : uppercase;
+			}
+				#middle #center-column .clientLists .client_nav li:hover{
+					text-decoration : underline;
+				}
+		#middle #center-column .clientLists .client{
+			display : none;
+		}
+			#middle #center-column .clientLists .client.active{
+				display : block;
+			}
+			#middle #center-column .clientLists .client #clients,
+			#middle #center-column #users,
+			#middle #center-column #coupons,
+			#middle #center-column #banners {
+				background : #ECE4D1;
+				border : 2px solid #fff;
+				margin-bottom : 10px;
+			}
+			#middle #center-column #adminFaq {
+				overflow : auto;
+			}
+				#middle #center-column .clientLists .client #clients .pagination {
+					font-size : 11px;
+					margin:  7px 0 10px;
+					padding : 0 10px;
+					text-align : left;
+			    }
+					#middle #center-column .clientLists .client #clients .pagination span {
+						font-size : 13px;
+						font-weight : bold;
+						margin : 0 2px;
+				    }
+		    	 #middle #center-column .clientLists .client #clients .pagination .pages {
+		            float : right;
+		        }
+		    	 #middle #center-column .clientLists .client #clients .pagination .pages a {
+		            color : #666;
+		        }
+		    	 #middle #center-column .clientLists .client #clients .pagination .pages .selected {
+		            color : #3C91C7;
+		        }
+    	 #middle #center-column .lists {
+    	 	margin : 0 7px;
+    	 }
+	    	 #middle #center-column .anchor {
+	    	 	display : block;
+				margin-bottom : 10px;
+				text-align : right;	
+				text-transform : uppercase;
+	    	 }
+	    	 #middle #center-column .lists table {
+				margin-bottom : 10px;
+	    	 	width : 100%;				
+	    	 }
+	    	 #middle #center-column .lists table.unactive{
+	    	 	display : none;
+	    	 }
+		    	 #middle #center-column .lists table th {
+		    	 	background : #717A7E  ;
+		    	 	border-bottom : 1px solid #000 ;
+					color : #fff;
+					height : 30px;
+					padding : 3px;
+		    	 }
+			    	 #middle .lists table th.email,
+			    	 #middle .lists table th.name,
+			    	 #middle .lists table th.fullname,
+			    	 #middle .lists table th.username,
+			    	 #middle .lists table th.qa,
+			    	 #middle .lists table th.feedback  {
+			    	 	text-align : left;
+			    	 }
+		    	 #middle .lists table td {
+		    	 	background : #fff;
+					border : 1px solid #bbb;
+		    	 	padding : 3px 0;
+		    	 }
+			    	 #middle .lists table td.active,
+			    	 #middle .lists table td.id,
+			    	 #middle .lists table td.hits,
+			    	 #middle .lists table .edit,
+			    	 #middle .lists table td.delete,
+			    	 #middle .lists table td.approve,
+					 #middle .lists table td.category,
+					 #middle .lists table td.detail,
+					 #middle .lists table td.maillist,
+					 #middle .lists table td.phone,
+					 #middle .lists table td.orgid,
+					 #middle .lists table td.date,
+					 #middle .lists table td.type  {
+			    	 	text-align : center;
+			    	 }
+					 #middle .lists table tr.odd td  {
+			    	 	background : #D5D3D3 ;
+			    	 }
+					 #middle .lists table  td.id {
+			    	 	width : 30px;
+			    	 }
+					 #middle .lists table  td.phone,
+					 #middle .lists table  td.width,
+					 #middle .lists table  td.height {
+			    	 	width : 80px;
+			    	 }
+					 #middle .lists table  td.username{
+			    	 	width : 90px;
+			    	 }
+					 #middle .lists table  td.hits{
+					 	width : 40px;
+					 }					 
+					 #middle .lists table  td.email,
+			    	 #middle .lists table td.date {
+					 	width : 125px;
+					 }
+					 #middle .lists table  td.delete,
+					 #middle .lists table  td.active,
+					 #middle .lists table  td.edit,
+					 #middle .lists table  td.detail,
+					 #middle .lists table  td.maillist,
+					 #middle .lists table td.orgid,
+			    	 #middle .lists table td.approve,
+					 #middle .lists table td.type {
+			    	 	width : 50px;
+			    	 } 
+						 #middle .lists table  td.edit img,
+						 #middle .lists table  td.delete img {
+				    	 	cursor : pointer;
+				    	 }
+					 #middle .lists table  td.name,
+					 #middle .lists table  td.email,
+					 #middle .lists table  td.fullname,
+					 #middle .lists table  td.username
+					 #middle .lists table  td.code,{
+					 	padding : 0 5px;
+					 }
+					 #middle .lists table  td.q {
+					 	font-weight : bold;						
+					 	padding : 6px;
+						text-transform : uppercase;
+					 }					 
+					 #middle .lists table  td.name,
+					 #middle .lists table  td.sponsor {
+					 	background : url(/images/icons/preview.png) #fff 3px 50% no-repeat;
+					 	padding-left : 24px;
+						width : 225px;
+					 }
+					 #middle .lists table  td.nowidth {
+					 	width : auto;
+					 }
+					 #middle .lists table  tr.odd td.name {					 	
+					 	background : url(/images/icons/preview.png) #D5D3D3 3px 50% no-repeat;
+					 }
+						 #middle .lists table  td.name a,
+						 #middle .lists table  td.sponsor a {
+						 	color : #666;
+						 }		 
+					 #middle .lists table tr.odd td.a,
+					 #middle .lists table tr.odd td.copy,
+					 #middle .lists table tr.odd td.copydetail  {
+					 	border-bottom : 4px solid #717A7E ;
+			    	 	padding : 10px 15px;
+			    	 }
+					 #middle .lists table td.key {
+					 	font-weight  : bold;
+					 	padding :  4px;
+						text-align : right;
+					 	width : 100px;						
+					 }
+					 #middle .lists table td.value {
+					 	padding : 4px;	
+					 }
+						 #middle .lists table td.value img {
+						 	vertical-align : middle
+						 }
+						 #middle .lists table td.value div {
+						 	height : 20px;
+							line-height : 20px;
+						 }
+					 #middle .lists table td.offer
+					 #middle .lists table td.copy {
+					 	width : 100px;
+					 }
+					 #middle .lists table td.offer,
+					 #middle .lists table td.copy,
+					 #middle .lists table td.offerdetail,
+					 #middle .lists table td.copydetail {
+			    	 	padding : 10px 15px;
+					 }
+
+/**
+* @section				middle
+* @subsection		center-column
+* @page					form specific 
+*/
+#fieldset-hidden{
+	display : none;
+}
+#admin-element span {
+	margin-left : 5px;
+}	
+#admin-element span a {
+	font-weight : bold;
+	margin-left : 2px;
+}
+#preview-element img {
+	cursor : pointer;
+	margin-right : 5px;
+	vertical-align : middle
+}
+#fieldset-submitgroup {
+	height : 30px;
+	text-align : right;
+}
+	#fieldset-submitgroup dt{
+		display : none;
+	}
+	#fieldset-submitgroup dd{
+		float : right;
+	}
+	#middle #center-column #fieldset-submitgroup input{
+		cursor : pointer;
+		background : #B5CDDA ;
+		border : 1px solid #63839D;
+		color : #63839D;
+		float : right;
+		font-size : 11px;
+		font-weight : bold;
+		padding : 5px 20px;
+		margin-left : 20px; 
+		text-transform : uppercase;
+		width : auto;
+	}
+#subcategory-wrapper {
+	overflow : auto;
+	cler:both;
+}
+#middle #center-column #region-element,
+#middle #center-column #subcategory-element{
+	/*padding-left : 134px;*/
+	padding-left : 0;
+	overflow : auto;
+}
+#middle #center-column #subcategory-element{
+	overflow : hidden;
+}
+	#middle #center-column #subcategory-element h5{
+		color : #FF6F00;
+		margin-top : 3px;
+		text-transform : uppercase;
+	}
+	#middle #center-column #region-element div,
+	#middle #center-column #subcategory-element .subcatpair {
+	height:12px;
+		display:block;
+		margin-bottom : 5px;
+		padding-left : 19px;
+		position : relative;
+		clear:both;
+	}
+	#middle #center-column #region-element div input,
+	#middle #center-column #subcategory-element div input{
+		left : 0;
+		position : absolute;
+		top : 2px;	
+		width : auto;
+	}
+	#middle #center-column #region-element div label, 
+	#middle #center-column #subcategory-element div label{
+		text-align : left;
+		left : 20px;
+		position : absolute;
+		width : auto;
+	}
+#iconInfo, #logoInfo, #bannerInfo {
+	margin : 3px 0 3px 130px;
+}
+	#iconInfo img, #logoInfo img, #bannerInfo img {
+		margin-right : 5px;
+		vertical-align : top;
+	}
+	#iconInfo a, #logoInfo a, #bannerInfo a {
+		background : url(/images/icons/preview.png) 0 1px no-repeat;
+		color : #666;
+		font-size : 12px;
+		padding : 2px 2px 2px 20px;
+		text-decoration : none;		
+	}
+
+
+#statusMessage {
+	background : #B6C881;
+	border : 1px solid #9EB556;
+	color : #83983C;
+	display : none;
+	height : 25px;
+	left : 0;
+	padding : 5px;
+	position : fixed;	
+	text-align : center;
+	bottom : 0;
+	width : 100%;
+	z-index : 100000;
+}
+#statusMessage span {
+	background : url(/images/root/img/attention.png) 0 -3px no-repeat;
+	font-size : 20px;
+	margin : auto;
+	padding-left : 40px;
+	width : auto;
+	
+}
+
+
+input {vertical-align:middle}
+.floatleft {float:left !important}
+.floatright {float:right !important}
+.clear {clear:both !important}
+.bold {font-weight:bold !important}
+.normal {font-weight:normal !important}
+.block {display:block !important}
+input.text,
+select,
+textarea {
+	font-family:arial,sans-serif;
+	color:#333;
+	font-size:12px;
+	vertical-align:middle;
+	}
+input.text {
+	padding:1px 0 0 4px;
+	height:14px;
+	font-weight:normal;
+	}
+
+/* site logo */
+a.logo {
+	position:absolute;
+	top:5px;
+	left:20px;
+	}
+	
+	
+	
+	
+/* middle */
+
+/* right column */
+#right-column {
+	float:right;
+	padding:0 9px 0 0;
+	width:133px;
+	}
+
+
+	
+
+
+
+
+#left-column .link {
+	display:block;
+	width:142px;
+	height:25px;
+	background:url(/images/root/img/bg-left-link.gif);
+	margin:0 0 4px 0;
+	font-weight:bold;
+	padding:0 0 0 9px;
+	line-height:25px;
+	color:#60635A;
+	}
+	
+/* center column styles */
+.top-bar {
+	float:left;
+	width:603px;
+	border-left:2px solid #f70;
+	padding:0 0 0 9px;
+	margin:0 0 4px 0;
+	}
+/* text page header */
+.top-bar h1 {
+	font:20px/21px verdana,sans-serif;
+	color:#43729F;
+	margin:0 0 4px 0;
+	}
+/* orange button */
+.top-bar a.button {
+	float:right;
+	display:block;
+	width:75px;
+	height:35px;
+	text-align:center;
+	color:#fff;
+	text-transform:uppercase;
+	font-weight:bold;
+	line-height:27px;
+	background:url(/images/root/img/bg-orange-button.gif) no-repeat;
+	}
+	
+/* bar with select */
+.select-bar {
+	clear:both;
+	border-top:2px solid #f70;
+	border-bottom:2px solid #f70;
+	padding:5px 0 3px 0;
+	margin:0 0 17px 0;
+	}
+.select-bar select {width:145px;margin:0 2px;}
+
+/* table container */
+
+
+/* table select */
+div.table .select {
+	float:right;
+	margin:2px 1px 0 0;
+	width:176px;
+	height:25px;
+	background:#9097A9 url(/images/root/img/bg-select.gif);
+	color:#fff;
+	}
+div.table .select strong {
+	float:left;
+	padding:5px 0 0 5px;
+	}	
+div.table .select select {
+	float:right;
+	width:78px;
+	margin:2px 3px 0 0;
+	text-align:right;	
+	}
+	
+/* right column header */
+#right-column .h {
+	float:left;
+	background:#7E878A;
+	border:1px solid #B8B8B8;
+	border-bottom:0;
+	padding:3px 10px;
+	color:#fff;
+	text-transform:uppercase;
+	}
+/* right column box */
+#right-column .box {
+	float:left;
+	width:121px;
+	padding:5px;
+	border:1px solid #B8B8B8;
+	background:#EBEBEB;
+	margin:0 0 15px 0;
+	}
+	
+/* right column buttons */
+.buttons {
+	clear:both;
+	text-align:center;
+	padding:30px 0 15px 0;
+	}
+.buttons input {margin:0 0 6px 0;}
+
+
+textarea#keywords, textarea#description {
+	width:450px;
+	height:200px;
+}
+
+li.active span#clientlist {
+	font-size:12pt;
+	color:black;
+}
+
+li.active  span#addaclient {
+	color:red;
+}
+
+div#limecard table th{
+	padding:2px;
+	background-color:#ECE4D1;
+	border:1px solid black;
+}
+
+div#limecard table tr{
+	padding:2px;
+	border:1px solid #ECE4D1;
+}
+
+div#limecard table tr td {
+	background-color:white;
+	padding:4px;
+	border:1px solid black;
+}
+
+div#limecard table tr td.delete {
+	text-align:center;
+	color:red;
+}
+
+div#limecard table tr td.keywords {
+	background-color:#ECE4D1;
+	padding:5px;
+	border:1px solid black;
+}
+
+div#limecard table tr td.keywords span{
+	font-weight:bold;
+	
+}
+
+
+
+
+
+

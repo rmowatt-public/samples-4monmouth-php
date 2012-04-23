@@ -1,0 +1,11 @@
+<div id="towns" style="">
+	<h5><span class="lwr">or</span> By Town</h5>
+	<div id="searchTowns">
+	<!--<span><input type="checkbox" name="chkbx_town_0" class="twncbx_all" CHECKED /> ALL </span>-->
+	<?php
+		foreach($this->towns as $index=>$town) {
+			$townName = str_ireplace(' ', '&nbsp;', $town->getName())?>
+			<span><input class="twncbx" type="checkbox" name="chkbx_town_<?php echo $town->getId(); ?>" id="chkbx_town_<?php echo $town->getId(); ?>" /> <?php echo $townName; ?> </span>
+	<?php } ?>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="tab_content" id="<?php echo $this->id ?>" style="margin-top:0px;padding-top:0px;">
+	<!--<h6>Media</h6>-->
+	<? if($this->layout()->video) { ?>
+	<style>
+	div#mediatabs div	{
+		width:49%;
+		background-color:#0678BF;
+		color:white;
+		padding:5px 0 5px;
+		text-align:center;
+		border:1px solid white;
+		float:left;
+		cursor:pointer;
+		margin-top:-20px;
+	}
+	
+	/*.crusade .col1 div#content {
+		padding-top:5px;
+	}*/
+</style>
+	<div id='mediatabs'>
+	<? if($this->layout()->video && $this->layout()->photo) { ?>
+		<div class="tab"  id='photoseltab'style="color:black;" onclick="$('phototab').style.display='inline';this.style.color='black';$('videoseltab').style.color='white';$('videotab').style.display='none'">Photos</div>
+		<div class="tab2" id='videoseltab' onclick="$('videotab').style.display='inline';this.style.color='black';$('photoseltab').style.color='white';$('phototab').style.display='none'">Video</div>
+		<? } ?>
+	</div>
+	<div class="clear" style="line-height:0px;">&nbsp;</div>
+	<? }?>
+	<? if($this->layout()->photo) { ?>
+	<div id='phototab' >
+		<div style="text-align:center;color:green;"><i>click image to view full size</i></div>
+		<?php echo $this->layout()->photogallery; ?>
+	</div>
+	<? }?>
+	<? if($this->layout()->video) { ?>
+	<div id='videotab' style="display:<? echo ($this->layout()->photo) ? 'none' : 'inline'; ?>">
+		<?php echo $this->layout()->videogallery; ?>
+	</div>
+	<? }?>
+</div>

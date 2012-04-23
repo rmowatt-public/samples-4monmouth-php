@@ -1,0 +1,28 @@
+<div  id="faqs">
+<?php echo $this->form; ?>
+	<h4>Answers</h4>
+	<div class="lists">
+		<table>
+			<tr>
+				<th class="feedback">Feedback / User</th>
+				<th>Date</th>
+				<th>Approve</th>
+			</tr>
+			<?php
+			$count =0;
+			foreach ($this->feedback as $key=>$feedback) { 
+				$count++;
+			?>
+			<tr id="q_<?php echo $feedback->getId(); ?>">
+				<td class="q"></span><?php echo $feedback->getEmail(); ?></td>
+				<td class="date"><?php echo $feedback->getDate(); ?></td>
+				<td class="approve"><input type="checkbox" <?php echo ($feedback->isApproved()) ? 'CHECKED' : ''; ?> onclick="FM.Feedback.toggleActive(this, <?php echo $feedback->getId(); ?>) "/></td>
+			</tr>
+			<tr id="a_<?php echo $feedback->getId(); ?>" class="odd">
+				<td colspan="3" class="a"><?php echo $feedback->getFeedback(); ?></td>
+			</tr>
+			<?php }?>
+		
+			</table>
+	</div>
+</div>

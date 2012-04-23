@@ -1,0 +1,52 @@
+<div class="couponLists">
+	<?php print $this->search; ?>
+	<div class="coupon_nav">
+		<FORM>
+			<SELECT id="couponjumpbox" onChange="location.href = $('couponjumpbox').options[$('couponjumpbox').selectedIndex].value">
+				<OPTION VALUE="/">SELECT
+				<OPTION VALUE="/root/managecoupons/999999999">All
+				<?php
+					foreach ($this->orglist as $org) { ?>
+						<OPTION VALUE="/root/managecoupons/<?php echo $org['id']; ?>" <?php if($this->selected == $org['id'])  {echo ' SELECTED ';} ?>><?php echo stripslashes(strtolower($org['name'])); ?>
+				<?php	} ?>
+			</SELECT>
+		</FORM>
+	</div>
+	<h3>Manage Client Coupons</h3>
+	<div id="coupons">
+		<h4>Coupons</h4>
+		<div class="lists">
+			<table class="listing" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<th class="sponsor">Sponsor</th>
+					<th></th>
+					<th class="id">Id</th>
+					<th class="orgid">OrgName</th>
+					<th class="type">Type</th>
+					<th class="code">Code</th>
+					<th class="delete">Delete</th>
+				</tr>
+				<?php foreach ($this->coupons as $coupon) { ?>
+					<tr id="tr_<?php echo $coupon->getId() ?>">
+						<td class="sponsor" colspan="2"><a class="preview_coupon" href="/couponpreview/<?php echo $coupon->getId() ?>"><?php echo $coupon->getSponsor() ?></a></td>
+						<td class="id"><?php echo $coupon->getId() ?> </td>
+						<td class="orgid" style="padding-left:3px;padding-right:3px;"><?php echo $coupon->getOrgName() ?> </td>
+						<td class="type"><?php echo $coupon->getType() ?> </td>
+						<td class="code"><?php echo $coupon->getCode() ?> </td>					
+						<td class="delete"><div onclick="FM.CouponRoot.deleteCoupon(<?php echo $coupon->getId() ?>)"><img src="/images/icons/remove.png" alt="add" height="16" width="16"></div></td>
+					</tr>
+					<tr class="odd">
+						<td class="offer">Offer : </td>
+						<td class="offerdetail" colspan="6"><?php echo $coupon->getOffer() ?></td>
+					</tr>
+					<tr class="odd">
+						<td class="copy">Copy : </td>
+						<td class="copydetail"colspan="6" ><?php echo $coupon->getCopy() ?></td>
+					</tr>
+				
+				<? } ?>
+			</tbody>
+	</table>
+		</div>			
+	</div>
+</div>
