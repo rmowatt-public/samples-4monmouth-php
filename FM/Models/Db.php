@@ -20,8 +20,8 @@ class FM_Models_Db {
 	private static $dbInstance = null;
 	protected $_profiler = true;
 	protected $_host = 'localhost';
-	protected $_userName = 'fmwrite';
-	protected $_password = 'FM269mw';
+	protected $_userName = '';
+	protected $_password = '';
 	protected $_dbName = 'FM';
 	protected $_conn;
 
