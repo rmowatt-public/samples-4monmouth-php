@@ -15,10 +15,8 @@ class FM_Components_Business extends FM_Components_Organization {
 
 	public function __construct($keys = null) {
 		if(parent::__construct($keys)) {
-			$this->keywords = array();
 			$this->_businessDataTable = new FM_Models_FM_OrgdataBusiness();
 			$catModel = new FM_Models_FM_BzOrgCat();
-
 			if(count($data = $this->_businessDataTable->getBusinessDataByOrgId($this->id))) {
 				if(!is_array($data) || !array_key_exists('id', $data)){return false;}
 				foreach ($data as $key=>$value) {
@@ -62,88 +60,6 @@ class FM_Components_Business extends FM_Components_Organization {
 		}
 		return false;
 	}
-	
-	/**
-	public static function setCats() {
-		$orgModel = new FM_Models_FM_OrgdataBusiness();
-		$orgTowns = new FM_Models_FM_BzOrgCat();
-		
-		$orgs = $orgModel->getAll();
-		//print_r($orgs);
-		//exit;
-		foreach ($orgs as $key=>$value) {
-			$orgTowns->insertRecord(array('orgId'=>$value['orgId'], 'catId'=>$value['category']));
-		}
-	}
-**/
-
-	/**
-	 * @param $keywords the $keywords to set
-	 */
-	public function setKeywords($keywords) {
-		$this->keywords = $keywords;
-	}
-
-	/**
-	 * @param $specialty the $specialty to set
-	 */
-	public function setSpecialty($specialty) {
-		$this->specialty = $specialty;
-	}
-
-	public function getCategories() {
-		return $this->categories;
-	}
-
-	/**
-	 * @param $category the $category to set
-	 */
-	public function setCategory($category) {
-		$this->category = $category;
-	}
-
-	public function getCategoryName() {
-		$catTable = new FM_Models_FM_SearchPrimaryCategories();
-		$cat = $catTable->getCategoryByKeys(array('id'=>$this->getCategory()));
-		if(count($cat)) {
-			return $cat['name'];
-		}
-		return false;
-	}
-
-	public function getCategoryNames() {
-		$catTable = new FM_Models_FM_SearchPrimaryCategories();
-		$cats = array();
-		foreach ($this->getCategories() as $key=>$value) {
-			$cat = $catTable->getCategoryByKeys(array('id'=>$value));
-			if(count($cat)) {
-				$cats[] = $cat['name'];
-			}
-		}
-		return $cats;
-	}
-
-	/**
-	 * @return the $keywords
-	 */
-	public function getKeywords() {
-		return $this->keywords;
-	}
-
-	/**
-	 * @return the $specialty
-	 */
-	public function getSpecialty() {
-		return $this->specialty;
-	}
-
-	/**
-	 * @return the $category
-	 */
-	public function getCategory() {
-		return $this->category;
-	}
-
 
 	public static function insertBusiness($args) {
 		$businessDataTable = new FM_Models_FM_OrgdataBusiness();
@@ -195,13 +111,13 @@ class FM_Components_Business extends FM_Components_Organization {
 		}
 		return  (count($orgs)) ? $orgs : false;
 	}
-	
+
 	public static function getActiveRecords() {
 		$orgData = new FM_Models_FM_Orgdata();
 		$activeOrgs = $orgData->getOrgsByKeys(array('active'=>1, 'type'=>2));
 		return  (count($activeOrgs)) ? $activeOrgs : false;
 	}
-	
+
 	public static function getActiveForRoot() {
 		$orgs = array();
 		$orgData = new FM_Models_FM_Orgdata();
@@ -212,9 +128,9 @@ class FM_Components_Business extends FM_Components_Organization {
 			$o['cats'] = self::parseCats($catTable->getOrgNames($org['id']));
 			$orgs[] = $o;
 		}
-		return $orgs;		
+		return $orgs;
 	}
-	
+
 	private function parseCats($cats) {
 		$orgs = array();
 		foreach ($cats as $k=>$v) {
@@ -238,7 +154,7 @@ class FM_Components_Business extends FM_Components_Organization {
 		}
 		return $allOrgs;
 	}
-	
+
 	public static function getByCategory($catId) {
 		$orgData = new FM_Models_FM_Orgdata();
 		$orgs = $orgData->getOrgsByCategory($catId);
@@ -247,8 +163,8 @@ class FM_Components_Business extends FM_Components_Organization {
 			$allOrgs[] = new FM_Components_Business(array('id'=>$values['id']));
 		}
 		return $allOrgs;
-	}	
-	
+	}
+
 	public static function getByCategoryForRoot($catId) {
 		$orgData = new FM_Models_FM_Orgdata();
 		$morgs = $orgData->getBzOrgsByCategoryForRoot($catId);
@@ -259,7 +175,77 @@ class FM_Components_Business extends FM_Components_Organization {
 			$orgs[] = $o;
 		}
 		return $orgs;
-		
+
 	}
+
+	public function getCategoryName() {
+		$catTable = new FM_Models_FM_SearchPrimaryCategories();
+		$cat = $catTable->getCategoryByKeys(array('id'=>$this->getCategory()));
+		if(count($cat)) {
+			return $cat['name'];
+		}
+		return false;
+	}
+
+	public function getCategoryNames() {
+		$catTable = new FM_Models_FM_SearchPrimaryCategories();
+		$cats = array();
+		foreach ($this->getCategories() as $key=>$value) {
+			$cat = $catTable->getCategoryByKeys(array('id'=>$value));
+			if(count($cat)) {
+				$cats[] = $cat['name'];
+			}
+		}
+		return $cats;
+	}
+
+	/**
+	 * @param $keywords the $keywords to set
+	 */
+	public function setKeywords($keywords) {
+		$this->keywords = $keywords;
+	}
+
+	/**
+	 * @param $specialty the $specialty to set
+	 */
+	public function setSpecialty($specialty) {
+		$this->specialty = $specialty;
+	}
+
+	public function getCategories() {
+		return $this->categories;
+	}
+
+	/**
+	 * @param $category the $category to set
+	 */
+	public function setCategory($category) {
+		$this->category = $category;
+	}
+
+	/**
+	 * @return the $keywords
+	 */
+	public function getKeywords() {
+		return $this->keywords;
+	}
+
+	/**
+	 * @return the $specialty
+	 */
+	public function getSpecialty() {
+		return $this->specialty;
+	}
+
+	/**
+	 * @return the $category
+	 */
+	public function getCategory() {
+		return $this->category;
+	}
+
+
+
 }
 
