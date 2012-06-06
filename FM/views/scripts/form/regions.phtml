@@ -1,7 +1,0 @@
-<dt id="region-label"><label for="region" class="required">region :</label></dt>
-<dd  id="region-element">
-    	<?php foreach ($this->regions as $key=>$value) { ?>
-    		<div><input id="region_<?php echo $value->getId();  ?>" name="region_<?php echo $value->getId();  ?>" type="checkbox" value="<?php echo $value->getId();  ?>" />&nbsp;<label><?php echo $value->getName(); ?></label></div>
-    	<? } ?>
-	 <?php if($this->element->getMessages()){ echo $this->formErrors($this->element->getMessages()); } ?>	
-</dd>
